@@ -59,7 +59,7 @@ html {
                 @media (min-width: 1200px) {
                     width: 80%;
                 }
-                &.single-primary {/* Single Post */
+                &.primary-single {/* Single Post */
                     width: 100%;
                     article.post {
                         @media (min-width: 768px) {
@@ -84,6 +84,9 @@ html {
                             width: 100%;
                         }
                     }
+                }
+                &.primary-404 {
+                    width: 100%;
                 }
                 header.entry-header, header.page-header {
                     margin: 0 0 20px;

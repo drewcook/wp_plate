@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package Summit
+ * @package AWS
  */
 
 ?>
@@ -37,7 +37,7 @@
                 <div class="container">
                     <p>&copy; <?php echo the_date('Y'); ?> <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
                 <span class="sep"> | </span>
-                <?php printf( esc_html__( 'Website by %1$s', 'summit' ), '<a href="http://altheawebservices.com/" rel="designer">Althea Web Services</a>' ); ?>
+                <?php printf( esc_html__( 'Website by %1$s', 'aws' ), '<a href="http://altheawebservices.com/" rel="designer">Althea Web Services</a>' ); ?>
                 </div>
             </div><!-- copybar -->
     </footer><!-- #site-footer -->

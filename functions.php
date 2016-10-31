@@ -1,17 +1,17 @@
 <?php
 /**
- * Summit functions and definitions.
+ * AWS functions and definitions.
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package Summit
+ * @package AWS
  */
 
-if ( ! function_exists( 'summit_setup' ) ) :
+if ( ! function_exists( 'aws_setup' ) ) :
 
-function summit_setup() {
+function aws_setup() {
 
-	load_theme_textdomain( 'summit', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'aws', get_template_directory() . '/languages' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -22,7 +22,7 @@ function summit_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'primary' => esc_html__( 'Primary', 'summit' ),
+		'primary' => esc_html__( 'Primary', 'aws' ),
 	) );
 
 	add_theme_support( 'html5', array(
@@ -34,86 +34,86 @@ function summit_setup() {
 	) );
 }
 endif;
-add_action( 'after_setup_theme', 'summit_setup' );
+add_action( 'after_setup_theme', 'aws_setup' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
  *
  * @global int $content_width
  */
-function summit_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'summit_content_width', 640 );
+function aws_content_width() {
+	$GLOBALS['content_width'] = apply_filters( 'aws_content_width', 640 );
 }
-add_action( 'after_setup_theme', 'summit_content_width', 0 );
+add_action( 'after_setup_theme', 'aws_content_width', 0 );
 
 /**
  * Register widget area.
  */
-function summit_widgets_init() {
+function aws_widgets_init() {
 	register_sidebar( array(
-		'name'          => esc_html__( 'Page Sidebar', 'summit' ),
+		'name'          => esc_html__( 'Page Sidebar', 'aws' ),
 		'id'            => 'sidebar-page',
-		'description'   => esc_html__( 'Add widgets here.', 'summit' ),
+		'description'   => esc_html__( 'Add widgets here.', 'aws' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<span class="widget-title">',
 		'after_title'   => '</span>',
 	) );
 	register_sidebar( array(
-		'name'          => esc_html__( 'Blog Sidebar', 'summit' ),
+		'name'          => esc_html__( 'Blog Sidebar', 'aws' ),
 		'id'            => 'sidebar-blog',
-		'description'   => esc_html__( 'Add widgets here.', 'summit' ),
+		'description'   => esc_html__( 'Add widgets here.', 'aws' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<span class="widget-title">',
 		'after_title'   => '</span>',
 	) );
 	register_sidebar( array(
-		'name'          => esc_html__( 'Footer 1', 'summit' ),
+		'name'          => esc_html__( 'Footer 1', 'aws' ),
 		'id'            => 'footer-1',
-		'description'   => esc_html__( 'Add widgets here.', 'summit' ),
+		'description'   => esc_html__( 'Add widgets here.', 'aws' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<span class="widget-title">',
 		'after_title'   => '</span>',
 	) );
 	register_sidebar( array(
-		'name'          => esc_html__( 'Footer 2', 'summit' ),
+		'name'          => esc_html__( 'Footer 2', 'aws' ),
 		'id'            => 'footer-2',
-		'description'   => esc_html__( 'Add widgets here.', 'summit' ),
+		'description'   => esc_html__( 'Add widgets here.', 'aws' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<span class="widget-title">',
 		'after_title'   => '</span>',
 	) );
 	register_sidebar( array(
-		'name'          => esc_html__( 'Footer 3', 'summit' ),
+		'name'          => esc_html__( 'Footer 3', 'aws' ),
 		'id'            => 'footer-3',
-		'description'   => esc_html__( 'Add widgets here.', 'summit' ),
+		'description'   => esc_html__( 'Add widgets here.', 'aws' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<span class="widget-title">',
 		'after_title'   => '</span>',
 	) );
 	register_sidebar( array(
-		'name'          => esc_html__( 'Footer 4', 'summit' ),
+		'name'          => esc_html__( 'Footer 4', 'aws' ),
 		'id'            => 'footer-4',
-		'description'   => esc_html__( 'Add widgets here.', 'summit' ),
+		'description'   => esc_html__( 'Add widgets here.', 'aws' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<span class="widget-title">',
 		'after_title'   => '</span>',
 	) );
 }
-add_action( 'widgets_init', 'summit_widgets_init' );
+add_action( 'widgets_init', 'aws_widgets_init' );
 
 /**
  * Enqueue scripts and styles.
  */
-function summit_scripts() {
+function aws_scripts() {
 
 	// Base Theme CSS
-	wp_enqueue_style( 'summit', get_stylesheet_uri() );
+	wp_enqueue_style( 'aws', get_stylesheet_uri() );
 	// Bootstrap CSS
 	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/assets/css/bootstrap.min.css', '3.3.7' );
 	// Custom CSS
@@ -130,7 +130,7 @@ function summit_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'summit_scripts' );
+add_action( 'wp_enqueue_scripts', 'aws_scripts' );
 
 /**
  * Require other theme files

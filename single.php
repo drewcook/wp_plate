@@ -4,12 +4,12 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
- * @package Summit
+ * @package AWS
  */
 
 get_header(); ?>
 
-	<div id="primary" class="single-primary">
+	<div id="primary" class="primary-single">
 		<main id="main" class="site-main" role="main">
 
 		<?php
