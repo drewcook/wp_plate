@@ -51,5 +51,10 @@
 
 	</header><!-- #masthead -->
 
-	<div id="content">
-		<div class="container">
+
+	<?php if (is_front_page()) : ?>
+		<div id="front-page">
+	<?php else : ?>
+		<div id="content">
+			<div class="container">
+	<?php endif; ?>

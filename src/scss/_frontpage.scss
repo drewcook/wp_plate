@@ -1,9 +1,11 @@
 /* ==========================================================================
-   Include Partials
+   Frontpage Styles
    ========================================================================== */
 
-@import "base";
-@import "header";
-@import "footer";
-@import "components";
-@import "frontpage";
+#front-page {
+    #main {
+        h1.entry-title {
+            margin: 0;
+        }
+    }
+}
