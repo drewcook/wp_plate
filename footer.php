@@ -11,11 +11,12 @@
 
 ?>
 
-    <?php if (is_front_page()) : ?>
+<?php if (is_front_page()) : ?>
+        </div><!-- #content / #front-page -->
+<?php else : ?>
         </div><!-- .container -->
-    <?php endif; ?>
-
 	</div><!-- #content / #front-page -->
+<?php endif; ?>
 
 	<footer id="site-footer" role="contentinfo">
         <div class="container-fluid footer-info">
