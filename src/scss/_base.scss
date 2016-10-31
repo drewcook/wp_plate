@@ -1,0 +1,136 @@
+/* ==========================================================================
+   Base Styles & Variables
+   ========================================================================== */
+
+/* Colors */
+
+$light: #efefef;
+$dark: #333;
+$gray: #aaa;
+$primary_color: #294e85;
+$secondary_color: #a5bee3;
+$accent: #38c9cc;
+$heading_color: #256178;
+
+
+/* Base Styles */
+
+html {
+    body {
+        font-family: 'Poppins', Arial, sans-serif;
+        font-weight: 400;
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Libre Baskerville', Times, serif;
+            font-weight: 700;
+            line-height: 1.4;
+            color: $heading_color;
+        }
+        p, ul li, ol li, span, a {
+            font-size: 17px;
+            line-height: 1.7;
+            font-weight: 300;
+            color: $dark;
+        }
+        strong {
+            font-weight: 600;
+        }
+        a:link {
+            text-decoration: none;
+        }
+        a:hover {
+            color: $accent;
+        }
+        .widget {
+          margin: 0;
+          ul {
+            list-style-type: none;
+            padding-left: 0;
+          }
+        }
+        #content {
+            padding-top: 40px;
+            padding-bottom: 30px;
+            #primary {
+                @media (min-width: 768px) {
+                    float: left;
+                    width: 70%;
+                    padding-right: 30px;
+                }
+                @media (min-width: 1200px) {
+                    width: 80%;
+                }
+                &.single-primary {/* Single Post */
+                    width: 100%;
+                    article.post {
+                        @media (min-width: 768px) {
+                            float: left;
+                            width: 70%;
+                            padding-right: 30px;
+                        }
+                        @media (min-width: 1200px) {
+                            width: 80%;
+                        }
+                    }
+                    .single-sidebar {
+                        @media (min-width: 768px) {
+                            text-align: left;
+                            float: right;
+                            width: 30%;
+                        }
+                        @media (min-width: 1200px) {
+                            width: 20%;
+                        }
+                        #secondary {
+                            width: 100%;
+                        }
+                    }
+                }
+                header.entry-header, header.page-header {
+                    margin: 0 0 20px;
+                    border-bottom: 1px solid $heading_color;
+                    h1.entry-title, h1.page-title {
+                        margin: 0;
+                        span {
+                            @extend h1;
+                            font-size: 36px;
+                            font-style: italic;
+                        }
+                    }
+                }
+                .entry-content {
+                        margin-top: 0;
+                        h2 {
+                            margin-bottom: 20px;
+                        }
+                        h3 {
+                            margin-bottom: 10px;
+                        }
+                        img {
+                            border: 3px solid $secondary_color;
+                            border-radius: 10px;
+                        }
+                }
+            }
+            #secondary {
+                text-align: center;
+                clear: both;
+                @media (min-width: 768px) {
+                    text-align: left;
+                    float: right;
+                    width: 30%;
+                    clear: none;
+                }
+                @media (min-width: 1200px) {
+                    width: 20%;
+                }
+                .widget-title {
+                    display: block;
+                    font-family: 'Libre Baskerville', TImes, serif;
+                    font-size: 26px;
+                    margin-top: 10px;
+                    color: $heading_color;
+                }
+            }
+        }
+    }
+}
