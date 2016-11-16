@@ -1,0 +1,44 @@
+/* ==========================================================================
+   Header Topbar Styles - only loaded if the theme option is active
+   ========================================================================== */
+
+header#masthead .header-topbar {
+    background-color: #000;
+}
+header#masthead .header-topbar p {
+    margin: 5px auto;
+    color: #efefef;
+    text-align: center;
+    font-size: 14px;
+}
+header#masthead .header-topbar ul {
+    text-align: center;
+    list-style: none;
+    padding-left: 0px;
+    margin: 0 auto;
+}
+header#masthead .header-topbar ul li {
+    display: inline-block;
+    padding: 3px 8px;
+}
+header#masthead .header-topbar ul li a {
+    color: #ddd;
+    font-size: 20px;
+}
+header#masthead .header-topbar ul li a:hover {
+    color: #fff;
+}
+header#masthead .header-topbar ul li a i {
+    vertical-align: middle;
+}
+
+@media (min-width: 768px) {
+    header#masthead .header-topbar p {
+        text-align: left;
+        font-size: 15px;
+        margin-top: 7px;
+    }
+    header#masthead .header-topbar ul {
+        float: right;
+    }
+}

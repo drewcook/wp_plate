@@ -3,48 +3,105 @@
    ========================================================================== */
 
 header#masthead {
-    background: $light;
-    border-bottom: 2px solid $primary_color;
-    nav.navbar {
-        margin-bottom: 0;
-        min-height: 0;
-        border: none;
-        background: none;
-        border-radius: 0;
-        ul.navbar-nav {
-            li {
-                a {
-                    color: $dark;
-                    @media (min-width: 768px) {
-                        padding-top: 10px;
-                        padding-bottom: 10px;
-                    }
-                    .caret {
-                        display: none;
-                    }
-                    &:hover {
-                        background: $primary_color;
-                        color: $light;
+    .header-navbar {
+        background: $light;
+        border-bottom: 2px solid $primary_color;
+        border-top: 2px solid $primary_color;
+        position: relative;
+        div.col-sm-1 {
+            text-align: right;
+        }
+        nav.navbar {
+            margin-bottom: 0;
+            min-height: 0;
+            border: none;
+            background: none;
+            border-radius: 0;
+            .navbar-header {
+                button.navbar-toggle {
+                    margin-right: 0;
+                }
+                .navbar-brand {
+                    padding-left: 0;
+                }
+            }
+            .navbar-collapse {
+                padding-left: 0;
+                padding-right: 0;
+                ul.navbar-nav {
+                    li {
+                        a {
+                            color: $dark;
+                            @media (min-width: 768px) {
+                                padding-top: 10px;
+                                padding-bottom: 10px;
+                            }
+                            .caret {
+                                display: none;
+                            }
+                            &:hover {
+                                background: $primary_color;
+                                color: $light;
+                            }
+                        }
+                        &.active > a {
+                            background: $primary_color;
+                            color: $light;
+                        }
+                        ul {
+                            background: $light;
+                            padding: 0;
+                            border: 2px solid $primary_color;
+                            box-shadow: none;
+                            border-radius: 0px;
+                            ul {
+                                position: absolute;
+                                left: 100%;
+                                top: -2px;
+                                margin-top: 0;
+                            }
+                        }
                     }
                 }
-                &.active > a {
-                    background: $primary_color;
-                    color: $light;
-                }
-                ul {
-                    background: $light;
+            }
+        }
+        a.open-search {
+            background: $primary_color;
+            color: $light;
+            padding: 6px 15px;
+            line-height: 40px;
+        }
+        .search-form-wrapper {
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            background: rgba(0,0,0,0.7);
+            height: 100%;
+            opacity: 0;
+            visibility: hidden;
+            form.search-form {
+                input {
+                    display: inline-block;
+                    background: none;
+                    border: none;
+                    text-align: right;
+                    line-height: 40px;
                     padding: 0;
-                    border: 2px solid $primary_color;
-                    box-shadow: none;
-                    border-radius: 0px;
-                    ul {
-                        position: absolute;
-                        left: 100%;
-                        top: -2px;
-                        margin-top: 0;
+                    color: #fff;
+                    &:focus {
+                        outline: none;
+                    }
+                    &[type='submit'] {
+                        display: none;
                     }
                 }
             }
         }
     }
+}
+
+body.search-is-open .search-form-wrapper {
+    opacity: 1 !important;
+    visibility: visible !important;
 }

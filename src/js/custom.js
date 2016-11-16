@@ -27,4 +27,27 @@ jQuery(document).ready(function($){
     $('.site-main .entry-content img').each(function(){
         $(this).addClass('img-responsive');
     });
+
+    // Remove any search field values
+    $('input.search-field').val('');
+    // Navbar search form
+    $navbar_search = $('.header-navbar .search-form-wrapper');
+    $navbar_search_field = $navbar_search.find('.search-form input.search-field');
+    $('a.open-search').on('click', function(event) {
+        event.stopPropagation();
+        $('body').addClass('search-is-open');
+        $navbar_search_field.attr('placeholder', '');
+        $navbar_search_field.focus();
+    });
+
+    $('body').on('click', function(event) {
+        $parent = $(event.target).parent();
+        if (event.target.id == ('search-form-wrapper') || $parent.is('label') ) {
+            return;
+        }
+        if ( $('body').hasClass('search-is-open') ) {
+            $('body').removeClass('search-is-open');
+        }
+    });
+
 });
