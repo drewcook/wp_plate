@@ -57,6 +57,7 @@ function aws_custom_settings() {
 	register_setting( 'aws-settings-group', 'site_logo' );
 	register_setting( 'aws-settings-group', 'header_topbar' );
 	register_setting( 'aws-settings-group', 'primary_phone' );
+	register_setting( 'aws-settings-group', 'primary_email' );
 		// Address
 	register_setting( 'aws-settings-group', 'address_1' );
 	register_setting( 'aws-settings-group', 'address_2' );
@@ -68,7 +69,11 @@ function aws_custom_settings() {
 	register_setting( 'aws-settings-group', 'social_twitter', 'aws_sanitize_url_field' );
 	register_setting( 'aws-settings-group', 'social_google', 'aws_sanitize_url_field' );
 	register_setting( 'aws-settings-group', 'social_instagram', 'aws_sanitize_url_field' );
+	register_setting( 'aws-settings-group', 'social_linkedin', 'aws_sanitize_url_field' );
 	register_setting( 'aws-settings-group', 'social_pinterest', 'aws_sanitize_url_field' );
+	register_setting( 'aws-settings-group', 'social_youtube', 'aws_sanitize_url_field' );
+	register_setting( 'aws-settings-group', 'social_yelp', 'aws_sanitize_url_field' );
+	register_setting( 'aws-settings-group', 'social_rss', 'aws_sanitize_url_field' );
 	// Snippets
 	register_setting( 'aws-snippets-group', 'snippets_header' );
 	register_setting( 'aws-snippets-group', 'snippets_footer' );
@@ -87,12 +92,17 @@ function aws_custom_settings() {
 	add_settings_field( 'site-logo', 'Site Logo', 'aws_site_logo', 'aws_options', 'aws-general-options' );
 	add_settings_field( 'header-topbar', 'Header Top Bar', 'aws_header_topbar', 'aws_options', 'aws-general-options' );
 	add_settings_field( 'primary-phone', 'Primary Number', 'aws_primary_phone', 'aws_options', 'aws-general-options' );
+	add_settings_field( 'primary-email', 'Primary Email', 'aws_primary_email', 'aws_options', 'aws-general-options' );
 	add_settings_field( 'main-address', 'Address', 'aws_address', 'aws_options', 'aws-general-options' );
 	add_settings_field( 'social-facebook', 'Facebook URL', 'aws_social_facebook', 'aws_options', 'aws-social-options' );
 	add_settings_field( 'social-twitter', 'Twitter URL', 'aws_social_twitter', 'aws_options', 'aws-social-options' );
 	add_settings_field( 'social-google', 'Google+ URL', 'aws_social_google', 'aws_options', 'aws-social-options' );
 	add_settings_field( 'social-instagram', 'Instagram URL', 'aws_social_instagram', 'aws_options', 'aws-social-options' );
+	add_settings_field( 'social-linkedin', 'LinkedIn URL', 'aws_social_linkedin', 'aws_options', 'aws-social-options' );
 	add_settings_field( 'social-pinterest', 'Pinterest URL', 'aws_social_pinterest', 'aws_options', 'aws-social-options' );
+	add_settings_field( 'social-youtube', 'YouTube URL', 'aws_social_youtube', 'aws_options', 'aws-social-options' );
+	add_settings_field( 'social-yelp', 'Yelp URL', 'aws_social_yelp', 'aws_options', 'aws-social-options' );
+	add_settings_field( 'social-rss', 'RSS Feed URL', 'aws_social_rss', 'aws_options', 'aws-social-options' );
 	// Code Snippets
 	add_settings_field( 'header-snippets', 'Header Snippets', 'aws_header_snippets', 'aws_code_snippets', 'aws-header-snippets' );
 	add_settings_field( 'footer-snippets', 'Footer Snippets', 'aws_footer_snippets', 'aws_code_snippets', 'aws-footer-snippets' );
@@ -149,7 +159,11 @@ function aws_header_topbar() {
 }
 function aws_primary_phone() {
 	$primary_phone = esc_attr( get_option('primary_phone') );
-	echo '<input type="text" name="primary_phone" value="'.$primary_phone.'" placeholder="(123) 456-7890" />';
+	echo '<input type="phone" name="primary_phone" value="'.$primary_phone.'" placeholder="(123) 456-7890" />';
+}
+function aws_primary_email() {
+	$primary_email = esc_attr( get_option('primary_email') );
+	echo '<input type="email" name="primary_email" value="'.$primary_email.'" placeholder="example@email.com" />';
 }
 function aws_address() {
 	$address_1 = esc_attr( get_option('address_1') );
@@ -180,9 +194,25 @@ function aws_social_instagram() {
 	$social_instagram = esc_attr( get_option('social_instagram') );
 	echo '<input type="text" name="social_instagram" value="'.$social_instagram.'" placeholder="instagram.com/your-page-handler" />';
 }
+function aws_social_linkedin() {
+	$social_linkedin = esc_attr( get_option('social_linkedin') );
+	echo '<input type="text" name="social_linkedin" value="'.$social_linkedin.'" placeholder="linkedin.com/your-page-handler" />';
+}
 function aws_social_pinterest() {
 	$social_pinterest = esc_attr( get_option('social_pinterest') );
 	echo '<input type="text" name="social_pinterest" value="'.$social_pinterest.'" placeholder="pinterest.com/your-page-handler" />';
+}
+function aws_social_youtube() {
+	$social_youtube = esc_attr( get_option('social_youtube') );
+	echo '<input type="text" name="social_youtube" value="'.$social_youtube.'" placeholder="youtube.com/your-page-handler" />';
+}
+function aws_social_yelp() {
+	$social_yelp = esc_attr( get_option('social_yelp') );
+	echo '<input type="text" name="social_yelp" value="'.$social_yelp.'" placeholder="yelp.com/your-page-handler" />';
+}
+function aws_social_rss() {
+	$social_rss = esc_attr( get_option('social_rss') );
+	echo '<input type="text" name="social_rss" value="'.$social_rss.'" placeholder="yourfeed.com/your-rss-feed" />';
 }
 
 // Code Snippets Page

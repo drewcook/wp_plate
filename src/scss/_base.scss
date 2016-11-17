@@ -49,12 +49,14 @@ html {
         }
         #content {
             padding-top: 40px;
-            padding-bottom: 30px;
+            padding-bottom: 40px;
             #primary {
+                margin-bottom: 40px;
                 @media (min-width: 768px) {
                     float: left;
                     width: 70%;
                     padding-right: 30px;
+                    margin-bottom: 0;
                 }
                 @media (min-width: 1200px) {
                     width: 80%;
@@ -109,8 +111,42 @@ html {
                             margin-bottom: 10px;
                         }
                         img {
+                            width: 100%;
+                            margin: 20px auto;
                             border: 3px solid $secondary_color;
                             border-radius: 10px;
+                            @media (min-width: 768px) {
+                                width: initial;
+                            }
+                            &.aligncenter {
+                                margin: 20px auto;
+                            }
+                            &.alignleft {
+                                float: left;
+                                margin-right: 15px;
+                                margin-bottom: 5px;
+                            }
+                            &.alignright {
+                                float: right;
+                                margin-left: 15px;
+                                margin-bottom: 5px;
+                            }
+                        }
+                        figure {
+                            width: 100% !important;
+                            margin: 0 auto 20px;
+                            @media (min-width: 768px) {
+                                width: initial !important;
+                            }
+                            &.aligncenter {
+                                @extend img.aligncenter;
+                            }
+                            &.alignleft {
+                                @extend img.alignleft;
+                            }
+                            &.alignright {
+                                @extend img.alignright;
+                            }
                         }
                 }
             }

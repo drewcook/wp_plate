@@ -8,7 +8,7 @@ header#masthead {
         border-bottom: 2px solid $primary_color;
         border-top: 2px solid $primary_color;
         position: relative;
-        div.col-sm-1 {
+        div.col-sm-2 {
             text-align: right;
         }
         nav.navbar {
@@ -29,12 +29,18 @@ header#masthead {
                 padding-left: 0;
                 padding-right: 0;
                 ul.navbar-nav {
+                    width: 100%;
+                    margin: 0;
                     li {
                         a {
                             color: $dark;
+                            font-size: 14px;
                             @media (min-width: 768px) {
-                                padding-top: 10px;
-                                padding-bottom: 10px;
+                                padding: 10px;
+                            }
+                            @media (min-width: 992px) {
+                                font-size: 17px;
+                                padding: 10px 15px;
                             }
                             .caret {
                                 display: none;
@@ -50,15 +56,35 @@ header#masthead {
                         }
                         ul {
                             background: $light;
-                            padding: 0;
-                            border: 2px solid $primary_color;
                             box-shadow: none;
+                            border: none;
                             border-radius: 0px;
-                            ul {
+                            width: 100%;
+                            position: relative;
+                            @media (min-width: 768px) {
                                 position: absolute;
-                                left: 100%;
-                                top: -2px;
+                                width: initial;
+                                padding: 0;
+                                border: 2px solid $primary_color;
+                            }
+                            li a {
+                                padding-top: 10px;
+                                padding-bottom: 10px;
+                            }
+                            ul {
+                                width: 100%;
+                                position: relative;
                                 margin-top: 0;
+                                @media (min-width: 768px) {
+                                    position: absolute;
+                                    width: initial;
+                                    left: 100%;
+                                    top: -2px;
+                                }
+                                li a {
+                                    padding-top: 10px;
+                                    padding-bottom: 10px;
+                                }
                             }
                         }
                     }
@@ -76,7 +102,7 @@ header#masthead {
             top: 0;
             right: 0;
             left: 0;
-            background: rgba(0,0,0,0.7);
+            background: rgba(0,0,0,0.8);
             height: 100%;
             opacity: 0;
             visibility: hidden;

@@ -44,22 +44,24 @@
 
 	<header id="masthead" role="banner">
 
-<?php if ( get_option('header_topbar') or get_option('social_facebook') or get_option('social_twitter') or get_option('social_google') or get_option('social_instagram') or get_option('social_pinterest') ) : ?>
+<?php if ( get_option('header_topbar') or get_option('primary_email') or get_option('social_facebook') or get_option('social_twitter') or get_option('social_google') or get_option('social_instagram') or get_option('social_linkedin') or get_option('social_pinterest') or get_option('social_youtube') or get_option('social_yelp') or get_option('social_rss') ) : ?>
 
 		<div class="container-fluid header-topbar">
 			<div class="container">
 				<div class="row">
 				<?php if ( get_option('header_topbar') ) : ?>
-					<div class="col-xs-12 col-sm-8 col-md-9">
+					<div class="col-xs-12 col-sm-8">
 						<?php if (get_option('header_topbar')) : ?>
 							<p><?php echo get_option('header_topbar'); ?></p>
 						<?php endif; ?>
 					</div>
 				<?php endif; ?>
-				<?php if ( get_option('social_facebook') or get_option('social_twitter') or get_option('social_google') or get_option('social_instagram') or get_option('social_pinterest') ) : ?>
-					<div class="col-xs-12 col-sm-4 col-md-3 pull-right">
+				<?php if ( get_option('primary_email') or get_option('social_facebook') or get_option('social_twitter') or get_option('social_google') or get_option('social_instagram') or get_option('social_linkedin') or get_option('social_pinterest') or get_option('social_youtube') or get_option('social_yelp') or get_option('social_rss') ) : ?>
+					<div class="col-xs-12 col-sm-4 pull-right">
 						<ul>
-							<?php if (get_option('social_facebook')) : ?>
+							<?php if (get_option('primary_email')) : ?>
+								<li><a href="mailto:<?php echo get_option('primary_email'); ?>"><i class="fa fa-envelope"></i></a></li>
+							<?php endif; if (get_option('social_facebook')) : ?>
 								<li><a href="http://<?php echo get_option('social_facebook'); ?>" target="_blank"><i class="fa fa-facebook"></i></a></li>
 							<?php endif; if (get_option('social_twitter')) : ?>
 								<li><a href="http://<?php echo get_option('social_twitter'); ?>" target="_blank"><i class="fa fa-twitter"></i></a></li>
@@ -67,8 +69,16 @@
 								<li><a href="http://<?php echo get_option('social_google'); ?>" target="_blank"><i class="fa fa-google-plus"></i></a></li>
 							<?php endif; if (get_option('social_instagram')) : ?>
 								<li><a href="http://<?php echo get_option('social_instagram'); ?>" target="_blank"><i class="fa fa-instagram"></i></a></li>
+							<?php endif; if (get_option('social_linkedin')) : ?>
+								<li><a href="http://<?php echo get_option('social_linkedin'); ?>" target="_blank"><i class="fa fa-linkedin"></i></a></li>
 							<?php endif; if (get_option('social_pinterest')) : ?>
 								<li><a href="http://<?php echo get_option('social_pinterest'); ?>" target="_blank"><i class="fa fa-pinterest-p"></i></a></li>
+							<?php endif; if (get_option('social_youtube')) : ?>
+								<li><a href="http://<?php echo get_option('social_youtube'); ?>" target="_blank"><i class="fa fa-youtube"></i></a></li>
+							<?php endif; if (get_option('social_yelp')) : ?>
+								<li><a href="http://<?php echo get_option('social_yelp'); ?>" target="_blank"><i class="fa fa-yelp"></i></a></li>
+							<?php endif; if (get_option('social_rss')) : ?>
+								<li><a href="http://<?php echo get_option('social_rss'); ?>" target="_blank"><i class="fa fa-rss"></i></a></li>
 							<?php endif; ?>
 						</ul>
 					</div>

@@ -19,6 +19,7 @@ header#masthead .header-mainbar .header-mainbar-info p {
 	margin: 10px 0;
 }
 header#masthead .header-mainbar .header-mainbar-info p.header-phone {
+	color: #fff;
 	font-weight: 400;
 }
 header#masthead .header-mainbar .header-mainbar-info p.header-phone i {

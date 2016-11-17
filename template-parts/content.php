@@ -27,8 +27,13 @@
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
-		<?php
+		<?php if (is_single()) :
 			if (is_single()) {
+				if ( get_the_post_thumbnail() ) :
+					echo "<img src=".get_the_post_thumbnail_url()." class='img-responsive featured-image alignright' alt='The Post Thumbnail' />";
+				else :
+					echo "<img src='".get_template_directory_uri()."/assets/img/featured-image.png' class='img-responsive featured-image alignright dummy' alt='The Post Thumbnail' />";
+				endif;
 				the_content( sprintf(
 					/* translators: %s: Name of current post. */
 					wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'aws' ), array( 'span' => array( 'class' => array() ) ) ),
@@ -46,7 +51,41 @@
 				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'aws' ),
 				'after'  => '</div>',
 			) );
-		?>
+		else : ?>
+		<div class="row">
+			<div class="col-xs-12 col-md-3">
+				<?php
+					if ( get_the_post_thumbnail() ) :
+						echo "<img src=".get_the_post_thumbnail_url()." class='img-responsive featured-image' alt='The Post Thumbnail' />";
+					else :
+						echo "<img src='".get_template_directory_uri()."/assets/img/featured-image.png' class='img-responsive featured-image' alt='The Post Thumbnail' />";
+					endif;
+				?>
+			</div>
+			<div class="col-xs-12 col-md-9">
+				<?php
+					if (is_single()) {
+						the_content( sprintf(
+							/* translators: %s: Name of current post. */
+							wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'aws' ), array( 'span' => array( 'class' => array() ) ) ),
+							the_title( '<span class="screen-reader-text">"', '"</span>', false )
+						) );
+					} else {
+						the_excerpt( sprintf(
+							/* translators: %s: Name of current post. */
+							wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'aws' ), array( 'span' => array( 'class' => array() ) ) ),
+							the_title( '<span class="screen-reader-text">"', '"</span>', false )
+						) );
+					}
+
+					wp_link_pages( array(
+						'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'aws' ),
+						'after'  => '</div>',
+					) );
+				?>
+			</div>
+		</div><!-- .row -->
+		<?php endif; ?>
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">

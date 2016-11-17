@@ -36,6 +36,12 @@ a.post-edit-link {
 
 /* Blog Posts Page and Single Post Meta */
 body.blog #main, body.single #main, body.search #main, body.archive #main {
+    img.featured-image {
+        margin: 0 !important;
+        &.dummy {
+            max-width: 300px;
+        }
+    }
     header.blog-title {
         margin: 0;
         border-bottom: 1px solid $primary_color;
