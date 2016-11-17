@@ -58,17 +58,8 @@ add_action( 'after_setup_theme', 'aws_content_width', 0 );
 
 function aws_widgets_init() {
 	register_sidebar( array(
-		'name'          => esc_html__( 'Page Sidebar', 'aws' ),
-		'id'            => 'sidebar-page',
-		'description'   => esc_html__( 'Add widgets here.', 'aws' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<span class="widget-title">',
-		'after_title'   => '</span>',
-	) );
-	register_sidebar( array(
-		'name'          => esc_html__( 'Blog Sidebar', 'aws' ),
-		'id'            => 'sidebar-blog',
+		'name'          => esc_html__( 'Primary Sidebar', 'aws' ),
+		'id'            => 'sidebar-primary',
 		'description'   => esc_html__( 'Add widgets here.', 'aws' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
