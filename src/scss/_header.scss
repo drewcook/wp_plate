@@ -8,6 +8,15 @@ header#masthead {
         border-bottom: 2px solid $primary_color;
         border-top: 2px solid $primary_color;
         position: relative;
+        &.sticky {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 99;
+            box-shadow: 0 0 5px #555;
+            border-top: 0;
+        }
         div.col-sm-2 {
             text-align: right;
         }

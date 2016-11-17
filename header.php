@@ -139,6 +139,8 @@
 
 <?php endif; ?>
 
+		<div class="sticky-trigger"></div>
+
 		<div class="container-fluid header-navbar">
 			<div class="container">
 				<div class="row">
