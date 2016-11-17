@@ -132,7 +132,7 @@
 		<div class="container-fluid header-navbar">
 			<div class="container">
 				<div class="row">
-					<div class="col-xs-12 col-sm-11">
+					<div class="col-xs-12 col-sm-10 col-md-11">
 						<nav class="navbar navbar-default" role="navigation">
 							<div class="navbar-header">
 								<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1">
@@ -153,7 +153,7 @@
 							?>
 						</nav>
 					</div>
-					<div class="hidden-xs col-sm-1">
+					<div class="hidden-xs col-sm-2 col-md-1">
 						<a href="#" class="open-search"><i class="fa fa-search"></i></a>
 					</div>
 				</div>

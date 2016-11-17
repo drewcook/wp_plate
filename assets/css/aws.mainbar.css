@@ -18,6 +18,9 @@ header#masthead .header-mainbar .header-mainbar-info p {
 	color: #fff;
 	margin: 10px 0;
 }
+header#masthead .header-mainbar .header-mainbar-info p.header-phone {
+	font-weight: 400;
+}
 header#masthead .header-mainbar .header-mainbar-info p.header-phone i {
 	vertical-align: middle;
 }
