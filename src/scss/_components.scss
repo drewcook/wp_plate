@@ -36,56 +36,73 @@ a.post-edit-link {
 
 /* Blog Posts Page and Single Post Meta */
 body.blog #main, body.single #main, body.search #main, body.archive #main {
-    header.entry-header {
-        h2.entry-title a {
-            font-size: 26px;
-            color: $heading_color;
+    header.blog-title {
+        margin: 0;
+        border-bottom: 1px solid $primary_color;
+        h1.page-title {
+            margin: 0;
         }
-        .entry-meta {
-            .posted-on {
+    }
+    article {
+        margin: 50px 0;
+        header.entry-header {
+            h2.entry-title a {
+                font-size: 26px;
                 color: $heading_color;
+            }
+            .entry-meta {
+                .posted-on {
+                    color: $heading_color;
+                }
+            }
+        }
+        .entry-footer {
+            border-top: 1px double $gray;
+            margin-top: 20px;
+            padding-top: 15px;
+            span {
+                display: block;
+                a {
+                    color: $accent;
+                    &:hover {
+                        color: $gray;
+                    }
+                }
+                &.tags-links a {
+                    font-style: italic;
+                }
+            }
+            .next-title, .prev-title {
+                display: inline;
+                color: $heading_color;
+            }
+            .next-title {
+                float: right;
             }
         }
     }
-    .entry-footer {
-        border-top: 3px double $heading_color;
+    nav.navigation {
         margin-top: 20px;
-        padding-top: 15px;
-        span {
-            display: block;
+        border-top: 3px double $primary_color;
+        padding: 5px 0;
+        .nav-previous, .nav-next {
+            display: inline-block;
             a {
                 color: $accent;
                 &:hover {
-                    color: $gray;
+                    color: $primary_color;
                 }
             }
-            &.tags-links a {
-                font-style: italic;
-            }
         }
-        nav.post-navigation {
-            border-top: 1px solid $gray;
-            border-bottom: 1px solid $gray;
-            padding: 5px 0;
-            margin: 10px 0;
-            .nav-previous, .nav-next {
-                display: inline-block;
-            }
-            .nav-previous {
-                color: red;
-            }
-            .nav-next {
-                float: right;
-                color: blue;
-            }
-        }
-        .next-title, .prev-title {
-            display: inline;
-            color: $heading_color;
-        }
-        .next-title {
+        .nav-next {
             float: right;
         }
+    }
+}
+body.single #main article {
+    margin: 0;
+    nav.navigation {
+        margin-top: 50px;
     }
 }
 
