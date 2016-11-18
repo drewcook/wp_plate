@@ -247,7 +247,7 @@ function aws_sanitize_url_field( $input ) {
 function aws_theme_create_page () {
 
 	if ( !current_user_can('manage_options')) {
-		wp_die(__('You do not have sufficient permissions to access this page.'));
+		wp_die( __( 'You do not have sufficient permissions to access this page.', 'aws' ) );
 	}
 
 	require_once( get_template_directory() . '/inc/aws-options.php' );
@@ -257,7 +257,7 @@ function aws_theme_create_page () {
 function aws_theme_code_snippets() {
 
 	if ( !current_user_can('manage_options')) {
-		wp_die(__('You do not have sufficient permissions to access this page.'));
+		wp_die( __( 'You do not have sufficient permissions to access this page.', 'aws' ) );
 	}
 
 	require_once( get_template_directory() . '/inc/aws-code-snippets.php' );
@@ -267,7 +267,7 @@ function aws_theme_code_snippets() {
 function aws_theme_custom_css() {
 
 	if ( !current_user_can('manage_options')) {
-		wp_die(__('You do not have sufficient permissions to access this page.'));
+		wp_die( __( 'You do not have sufficient permissions to access this page.', 'aws' ) );
 	}
 
 	require_once( get_template_directory() . '/inc/aws-custom-css.php' );

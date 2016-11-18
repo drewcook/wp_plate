@@ -51,6 +51,27 @@ function aws_content_width() {
 }
 add_action( 'after_setup_theme', 'aws_content_width', 0 );
 
+// Remove unnessessary theme functionality
+	// Emoji support
+remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
+remove_action( 'wp_print_styles', 'print_emoji_styles' );
+remove_action( 'admin_print_styles', 'print_emoji_styles' );
+	// WP Generator
+remove_action( 'wp_head', 'wp_generator' );
+	// Windows Live Writer
+remove_action( 'wp_head', 'wlwmanifest_link' );
+	// Shortlink
+remove_action( 'wp_head', 'wp_shortlink_wp_head' );
+remove_action( 'template_redirect', 'wp_shortlink_header' );
+	// XML-RPC - used by some plugins like Jetpack, but usually unneeded
+remove_action( 'wp_head', 'rsd_link' );
+	// WP API Access - used by some plugins, but usually unneeded
+remove_action( 'wp_head', 'rest_output_link_wp_head');
+remove_action( 'wp_head', 'wp_oembed_add_discovery_links');
+remove_action( 'rest_api_init', 'wp_oembed_register_route' );
+remove_action( 'wp_head', 'wp_oembed_add_host_js' );
+add_filter( 'rewrite_rules_array', 'disable_embeds_rewrites' );
 
 /*
    Register Widgets

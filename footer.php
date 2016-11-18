@@ -51,7 +51,7 @@
             <div class="container">
                 <p>&copy; <?php echo current_time('Y'); ?> <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
             <span class="sep"> | </span>
-            <?php printf( esc_html__( 'Website by %1$s', 'aws' ), '<a href="http://altheawebservices.com/" rel="designer">Althea Web Services</a>' ); ?>
+            <?php printf( esc_html__( 'Website by %1$s', 'aws' ), "<a href='".esc_url('http://altheawebservices.com/')."' rel='designer'>".__( 'Althea Web Services', 'aws' )."</a>" ); ?>
             </div>
         </div><!-- copybar -->
     </footer><!-- #site-footer -->

@@ -14,6 +14,7 @@
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<title><?php wp_title('|', true, 'right'); bloginfo('name'); ?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11">
 
 <?php wp_head();
@@ -153,7 +154,7 @@
 									<span class="icon-bar"></span>
 									<span class="icon-bar"></span>
 								</button>
-								<a class="navbar-brand hidden-sm hidden-md hidden-lg" href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a>
+								<a class="navbar-brand hidden-sm hidden-md hidden-lg" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo('name'); ?></a>
 							</div>
 							<?php wp_nav_menu( array(
 								'theme_location' => 'primary',
