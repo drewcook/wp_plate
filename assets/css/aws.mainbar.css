@@ -4,6 +4,7 @@
 
 header#masthead .header-mainbar {
     background-color: #aaa;
+    padding-top: 10px;
 }
 header#masthead .header-mainbar .header-mainbar-logo .site-title {
 	margin: 0;
