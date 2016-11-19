@@ -29,7 +29,7 @@ header#masthead .header-mainbar .header-mainbar-info p.header-phone i {
 
 @media (min-width: 768px) {
 	header#masthead .header-mainbar {
-		padding: 10px 0;
+		padding: 15px 0;
 	}
 	header#masthead .header-mainbar .header-mainbar-info p {
 		margin: 0;
