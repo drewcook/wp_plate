@@ -58,9 +58,6 @@ html {
                     padding-right: 30px;
                     margin-bottom: 0;
                 }
-                @media (min-width: 1200px) {
-                    width: 80%;
-                }
                 &.primary-single {/* Single Post */
                     width: 100%;
                     article.post {
@@ -69,18 +66,12 @@ html {
                             width: 70%;
                             padding-right: 30px;
                         }
-                        @media (min-width: 1200px) {
-                            width: 80%;
-                        }
                     }
                     .single-sidebar {
                         @media (min-width: 768px) {
                             text-align: left;
                             float: right;
                             width: 30%;
-                        }
-                        @media (min-width: 1200px) {
-                            width: 20%;
                         }
                         #secondary {
                             width: 100%;
@@ -159,15 +150,15 @@ html {
                     width: 30%;
                     clear: none;
                 }
-                @media (min-width: 1200px) {
-                    width: 20%;
-                }
-                .widget-title {
-                    display: block;
-                    font-family: 'Libre Baskerville', TImes, serif;
-                    font-size: 26px;
-                    margin-top: 10px;
-                    color: $heading_color;
+                .widget {
+                    margin-bottom: 30px;
+                    .widget-title {
+                        display: block;
+                        font-family: 'Libre Baskerville', TImes, serif;
+                        font-size: 26px;
+                        margin-top: 10px;
+                        color: $heading_color;
+                    }
                 }
             }
         }
