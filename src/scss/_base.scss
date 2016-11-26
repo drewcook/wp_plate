@@ -58,6 +58,12 @@ html {
                     padding-right: 30px;
                     margin-bottom: 0;
                 }
+                &.full-width {/* Full Width Page */
+                    float: none;
+                    width: 100%;
+                    margin-bottom: 0;
+                    padding-right: 0;
+                }
                 &.primary-single {/* Single Post */
                     width: 100%;
                     article.post {

@@ -2,11 +2,47 @@
    Components Styles
    ========================================================================== */
 
+/* Framed Images */
+img.framed {
+    padding: 10px;
+    background: #fff;
+    border: 2px solid $secondary_color;
+    border-radius: 5px;
+    box-shadow: 0 1px 8px $dark;
+}
+
 /* Post Edit Link */
 a.post-edit-link {
     color: $accent;
     &:hover {
         color: $gray;
+    }
+}
+
+/* Buttons */
+a.btn-1 {
+    display: inline-block;
+    padding: 10px 20px 5px;
+    margin: 15px auto;
+    background: $secondary_color;
+    color: $light;
+    text-transform: uppercase;
+    font-size: 20px;
+    border-radius: 8px;
+    &:hover {
+        background: $dark;
+        color: $light;
+    }
+}
+a.btn-2 {
+    display: inline-block;
+    padding: 8px 20px 6px;
+    margin: 10px auto;
+    background: $primary_color;
+    color: $light;
+    &:hover {
+        color: $light;
+        background: $secondary_color;
     }
 }
 
