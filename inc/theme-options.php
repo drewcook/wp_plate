@@ -243,7 +243,6 @@ function aws_conversion_page() {
 			'selected' => $conversion_page
 		)
 	);
-	//echo '<textarea rows="10" cols="140" name="snippets_footer" placeholder="Enter here" />'.$footer_snippets.'</textarea>';
 }
 function aws_conversion_code() {
 	$conversion_code = esc_attr( get_option('conversion_code') );
