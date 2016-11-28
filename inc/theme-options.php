@@ -77,6 +77,8 @@ function aws_custom_settings() {
 	// Snippets
 	register_setting( 'aws-snippets-group', 'snippets_header' );
 	register_setting( 'aws-snippets-group', 'snippets_footer' );
+	register_setting( 'aws-snippets-group', 'conversion_page' );
+	register_setting( 'aws-snippets-group', 'conversion_code' );
 	// Custom CSS
 	register_setting( 'aws-css-group', 'custom_css' );
 
@@ -85,6 +87,7 @@ function aws_custom_settings() {
 	add_settings_section( 'aws-social-options', 'Social Options', 'aws_social_options', 'aws_options' );
 	add_settings_section( 'aws-header-snippets', 'Code Snippets Header', 'aws_snippets_header', 'aws_code_snippets' );
 	add_settings_section( 'aws-footer-snippets', 'Code Snippets Footer', 'aws_snippets_footer', 'aws_code_snippets' );
+	add_settings_section( 'aws-conversion-tracking', 'Conversion Tracking', 'aws_snippets_conversion', 'aws_code_snippets' );
 	add_settings_section( 'aws-custom-css', 'Custom CSS', 'aws_custom_styles', 'aws_custom_css' );
 
 	// === Fields ===
@@ -106,6 +109,8 @@ function aws_custom_settings() {
 	// Code Snippets
 	add_settings_field( 'header-snippets', 'Header Snippets', 'aws_header_snippets', 'aws_code_snippets', 'aws-header-snippets' );
 	add_settings_field( 'footer-snippets', 'Footer Snippets', 'aws_footer_snippets', 'aws_code_snippets', 'aws-footer-snippets' );
+	add_settings_field( 'conversion-page', 'Conversion Page', 'aws_conversion_page', 'aws_code_snippets', 'aws-conversion-tracking' );
+	add_settings_field( 'conversion-code', 'Tracking Code', 'aws_conversion_code', 'aws_code_snippets', 'aws-conversion-tracking' );
 	// Custom CSS
 	add_settings_field( 'custom-css', 'Custom CSS', 'aws_custom_css', 'aws_custom_css', 'aws-custom-css' );
 
@@ -126,6 +131,9 @@ function aws_snippets_header() {
 }
 function aws_snippets_footer() {
 	echo 'Use this section to input custom code snippets before the closing <strong>body</strong> tag of the document.';
+}
+function aws_snippets_conversion() {
+	echo 'Use this section to input a conversion tracking code that will only show on a specified page.';
 }
 function aws_custom_styles() {
 	echo 'Use this section to write custom styles.';
@@ -218,11 +226,28 @@ function aws_social_rss() {
 // Code Snippets Page
 function aws_header_snippets() {
 	$header_snippets = esc_attr( get_option('snippets_header') );
-	echo '<textarea rows="10" cols="140" name="snippets_header" placeholder="Enter here" />'.$header_snippets.'</textarea>';
+	echo '<textarea rows="10" cols="140" name="snippets_header" placeholder="Enter code snippets here" />'.$header_snippets.'</textarea>';
 }
 function aws_footer_snippets() {
 	$footer_snippets = esc_attr( get_option('snippets_footer') );
-	echo '<textarea rows="10" cols="140" name="snippets_footer" placeholder="Enter here" />'.$footer_snippets.'</textarea>';
+	echo '<textarea rows="10" cols="140" name="snippets_footer" placeholder="Enter code snippets here" />'.$footer_snippets.'</textarea>';
+}
+function aws_conversion_page() {
+	$conversion_page = esc_attr( get_option('conversion_page') );
+	wp_dropdown_pages(
+		array(
+			'name' => 'conversion_page',
+			'echo' => 1,
+			'show_option_none' => __( '&mdash; Select &mdash;' ),
+			'option_none_value' => '0',
+			'selected' => $conversion_page
+		)
+	);
+	//echo '<textarea rows="10" cols="140" name="snippets_footer" placeholder="Enter here" />'.$footer_snippets.'</textarea>';
+}
+function aws_conversion_code() {
+	$conversion_code = esc_attr( get_option('conversion_code') );
+	echo '<textarea rows="10" cols="140" name="conversion_code" placeholder="Enter tracking code here" />'.$conversion_code.'</textarea>';
 }
 
 // Custom CSS Page

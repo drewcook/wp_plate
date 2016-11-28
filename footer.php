@@ -46,7 +46,9 @@
                 </div>
             </div>
         </div><!-- .site-info -->
-<?php endif; ?>
+<?php endif;
+    if (get_option('conversion_page')) : echo '<p style="color: red !important;">' . get_option('conversion_page') . '</p>'; endif;
+?>
         <div class="container-fluid copybar">
             <div class="container">
                 <p>&copy; <?php echo current_time('Y'); ?> <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
@@ -60,9 +62,15 @@
 
 <?php
     wp_footer();
-    // Load in header code snippets only if theme option is in use
+    // Load in footer code snippets only if theme option is in use
     if ( get_option('snippets_footer') ) :
         echo get_option('snippets_footer');
+    endif;
+    // Load in conversion tracking only if theme option is in use and only on the specified page
+    if ( get_option('conversion_page') && get_option('conversion_code') ) :
+        if ( is_page(get_option('conversion_page')) ) :
+            echo get_option('conversion_code');
+        endif;
     endif;
 ?>
 
