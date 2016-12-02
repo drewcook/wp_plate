@@ -46,9 +46,8 @@
                 </div>
             </div>
         </div><!-- .site-info -->
-<?php endif;
-    if (get_option('conversion_page')) : echo '<p style="color: red !important;">' . get_option('conversion_page') . '</p>'; endif;
-?>
+<?php endif; ?>
+
         <div class="container-fluid copybar">
             <div class="container">
                 <p>&copy; <?php echo current_time('Y'); ?> <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
