@@ -17,19 +17,9 @@ jQuery(document).ready(function($){
         }
     });
 
-    // Sticky navbar on scroll
-    $window = $(window);
-    $sticky_trigger = $("#masthead .sticky-trigger");
-    $navbar = $("#masthead .header-navbar");
-    $window.scroll(function(){
-        if ( window.scrollY >= $sticky_trigger.offset().top ) {
-            $navbar.addClass("sticky");
-            $('body').css('margin-top', '40px');
-        } else {
-            $navbar.removeClass("sticky");
-            $('body').css('margin-top', '0px');
-        }
-    });
+    // Sticky Navbar using Sticky Kit plugin
+    $('.header-navbar').stick_in_parent();
+    $('#secondary').stick_in_parent();
 
     // Add Bootstrap 'img-responsive; class to all images on pages and posts
     $('.site-main .entry-content img').each(function(){

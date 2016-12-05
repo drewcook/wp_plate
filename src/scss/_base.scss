@@ -156,6 +156,9 @@ html {
                     width: 30%;
                     clear: none;
                 }
+                &.is_stuck {
+                    margin-top: 70px;
+                }
                 .widget {
                     margin-bottom: 30px;
                     .widget-title {

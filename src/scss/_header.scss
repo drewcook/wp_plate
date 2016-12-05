@@ -8,13 +8,14 @@ header#masthead {
         border-bottom: 2px solid $primary_color;
         border-top: 2px solid $primary_color;
         position: relative;
-        &.sticky {
-            position: fixed;
-            top: 0;
+        &.is_stuck {
+            position: fixed !important;
+            top: 0 !important;
+            bottom: initial !important;
             left: 0;
             right: 0;
             z-index: 99;
-            box-shadow: 0 0 5px #555;
+            box-shadow: 0 0 8px #aaa;
             border-top: 0;
         }
         div.col-sm-2 {
@@ -65,7 +66,6 @@ header#masthead {
                         }
                         ul {
                             background: $light;
-                            box-shadow: none;
                             border: none;
                             border-radius: 0px;
                             width: 100%;
