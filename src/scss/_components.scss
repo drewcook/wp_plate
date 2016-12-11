@@ -72,12 +72,6 @@ a.btn-2 {
 
 /* Blog Posts Page and Single Post Meta */
 body.blog #main, body.single #main, body.search #main, body.archive #main {
-    img.featured-image {
-        margin: 0 !important;
-        &.dummy {
-            max-width: 300px;
-        }
-    }
     header.blog-title {
         margin: 0;
         border-bottom: 1px solid $primary_color;
@@ -95,6 +89,15 @@ body.blog #main, body.single #main, body.search #main, body.archive #main {
             .entry-meta {
                 .posted-on {
                     color: $heading_color;
+                }
+            }
+        }
+        .entry-content {
+            img.featured-image {
+                margin: 0 auto 20px !important;
+                width: 100% !important;
+                &.dummy {
+                    max-width: 300px;
                 }
             }
         }
@@ -145,6 +148,17 @@ body.single #main article {
     margin: 0;
     nav.navigation {
         margin-top: 50px;
+    }
+    .entry-content {
+        img.featured-image {
+            @media (min-width: 992px) {
+                width: 300px !important;
+                margin-left: 10px !important;
+            }
+            @media (min-width: 1200px) {
+                width: 400px !important;
+            }
+        }
     }
 }
 
