@@ -16,6 +16,11 @@
 
 	<div class="entry-content">
 		<?php
+
+			if ( get_the_post_thumbnail() ) :
+				echo "<img src=".get_the_post_thumbnail_url()." class='img-responsive featured-image alignright framed' alt='The Post Thumbnail' />";
+			endif;
+			
 			the_content();
 
 			wp_link_pages( array(

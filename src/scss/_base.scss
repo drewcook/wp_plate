@@ -173,3 +173,26 @@ html {
         }
     }
 }
+
+/* Page Featured Images */
+html body.page {
+    #content {
+        #primary {
+            .entry-content {
+                img.featured-image.framed {
+                    margin-bottom: 20px;
+                    @media (min-width: 768px) {
+                        width: 270px;
+                        margin-bottom: 5px;
+                    }
+                    @media (min-width: 992px) {
+                        width: 320px;
+                    }
+                    @media (min-width: 1200px) {
+                        width: 400px;
+                    }
+                }
+            }
+        }
+    }
+}
