@@ -48,4 +48,18 @@ jQuery(document).ready(function($){
         }
     });
 
+    //Parallax effect on links
+    $('a[href^="#"]').on('click',function (e) {
+        e.preventDefault();
+        var target = this.hash;
+        var $target = $(target);
+        if ($(window).scrollTop() >= 0) {
+            $('html, body').stop().animate({
+                'scrollTop': $target.offset().top - 50
+            }, 1000, 'swing', function () {
+                window.location.hash = target;
+            });
+        }
+    });
+
 });
