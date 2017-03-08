@@ -12,15 +12,19 @@ $secondary_color: #a5bee3;
 $accent: #38c9cc;
 $heading_color: #256178;
 
+/* Fonts */
+$sans_serif: 'Poppins', Arial, sans-serif;
+$serif: 'Libre Baskerville', Times, serif;
+
 
 /* Base Styles */
 
 html {
     body {
-        font-family: 'Poppins', Arial, sans-serif;
+        font-family: $sans-serif;
         font-weight: 400;
         h1, h2, h3, h4, h5, h6 {
-            font-family: 'Libre Baskerville', Times, serif;
+            font-family: $serif;
             font-weight: 700;
             line-height: 1.4;
             color: $heading_color;
@@ -163,7 +167,7 @@ html {
                     margin-bottom: 30px;
                     .widget-title {
                         display: block;
-                        font-family: 'Libre Baskerville', TImes, serif;
+                        font-family: $serif;
                         font-size: 26px;
                         margin-top: 10px;
                         color: $heading_color;
