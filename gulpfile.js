@@ -59,8 +59,6 @@ gulp.task('sass', function() {
         .pipe(concat(dist.min_css))
         .pipe(gulp.dest(dist.css))
         .pipe(minify_css())
-        // .pipe(sourcemaps.init())
-        // .pipe(sourcemaps.write())
         .pipe(gulp.dest(dist.css))
         .pipe(notify({message: 'Styles compiled and minified'}))
         .pipe(browserSync.reload({stream: true}));
@@ -80,8 +78,6 @@ gulp.task('js', function() {
         }))
         .pipe(uglify())
         .pipe(concat(dist.min_js))
-        // .pipe(sourcemaps.init())
-        // .pipe(sourcemaps.write())
         .pipe(gulp.dest(dist.js))
         .pipe(notify({message: 'Scripts compiled and minified'}))
         .pipe(browserSync.reload({stream: true}));
@@ -115,7 +111,6 @@ gulp.task('watch', function() {
 
     browserSync.init({
         proxy: 'localhost'
-        //server: './dist'
     });
     gulp.watch(src.js, ['js']);
     gulp.watch(src.sass, ['sass']);
