@@ -1,5 +1,6 @@
 // --------------------------------------------------------
 // Modules
+// Require all node modules defined in package.json
 // --------------------------------------------------------
 
 var gulp        = require("gulp"),
@@ -18,6 +19,7 @@ var gulp        = require("gulp"),
 
 // --------------------------------------------------------
 // Settings
+// Setting up source paths and distribution paths
 // --------------------------------------------------------
 
 var src = {
@@ -37,6 +39,8 @@ var dist = {
 
 // --------------------------------------------------------
 // Error Handler
+// This is created to display any syntax errors in the
+// console while saving files gulp is watching
 // --------------------------------------------------------
 
 var onError = function(err) {
@@ -46,6 +50,8 @@ var onError = function(err) {
 
 // --------------------------------------------------------
 // Task: Sass
+// Compile the Sass, prefix the CSS, concatenate and minify
+// all files
 // --------------------------------------------------------
 
 gulp.task('sass', function() {
@@ -68,6 +74,7 @@ gulp.task('sass', function() {
 
 // --------------------------------------------------------
 // Task: JS
+// Minify and concatenate all Javascript
 // --------------------------------------------------------
 
 gulp.task('js', function() {
@@ -87,6 +94,7 @@ gulp.task('js', function() {
 
 // --------------------------------------------------------
 // Task: Images
+// Run all added images through optmization tools
 // --------------------------------------------------------
 
 gulp.task('img', function() {
@@ -105,6 +113,9 @@ gulp.task('img', function() {
 
 // --------------------------------------------------------
 // Task: Watch
+// Set up BrowserSync and watch for changes on Javascript,
+// Sass, PHP, or any new images and reload the browser
+// on save
 // --------------------------------------------------------
 
 gulp.task('watch', function() {
@@ -122,6 +133,7 @@ gulp.task('watch', function() {
 
 // --------------------------------------------------------
 // Task: Default
+// Runs all of the tasks with the command 'gulp'
 // --------------------------------------------------------
 
 gulp.task('default', ['watch', 'sass', 'js', 'img']);
