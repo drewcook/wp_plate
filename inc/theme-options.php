@@ -226,11 +226,11 @@ function aws_social_rss() {
 // Code Snippets Page
 function aws_header_snippets() {
 	$header_snippets = esc_attr( get_option('snippets_header') );
-	echo '<textarea rows="10" cols="140" name="snippets_header" placeholder="Enter code snippets here" />'.$header_snippets.'</textarea>';
+	echo '<pre class="pre-block"><textarea rows="10" cols="140" name="snippets_header" placeholder="Enter code snippets here" />'.$header_snippets.'</textarea></pre>';
 }
 function aws_footer_snippets() {
 	$footer_snippets = esc_attr( get_option('snippets_footer') );
-	echo '<textarea rows="10" cols="140" name="snippets_footer" placeholder="Enter code snippets here" />'.$footer_snippets.'</textarea>';
+	echo '<pre class="pre-block"><textarea rows="10" cols="140" name="snippets_footer" placeholder="Enter code snippets here" />'.$footer_snippets.'</textarea></pre>';
 }
 function aws_conversion_page() {
 	$conversion_page = esc_attr( get_option('conversion_page') );
@@ -246,13 +246,13 @@ function aws_conversion_page() {
 }
 function aws_conversion_code() {
 	$conversion_code = esc_attr( get_option('conversion_code') );
-	echo '<textarea rows="10" cols="140" name="conversion_code" placeholder="Enter tracking code here" />'.$conversion_code.'</textarea>';
+	echo '<pre class="pre-block"><textarea rows="10" cols="140" name="conversion_code" placeholder="Enter tracking code here" />'.$conversion_code.'</textarea><pre>';
 }
 
 // Custom CSS Page
 function aws_custom_css() {
 	$custom_css = esc_attr( get_option('custom_css') );
-	echo '<textarea rows="10" cols="140" name="custom_css" placeholder="Enter here" />'.$custom_css.'</textarea>';
+	echo '<pre class="pre-block"><textarea rows="10" cols="140" name="custom_css" placeholder="Enter custom CSS here" />'.$custom_css.'</textarea><pre>';
 }
 
 // Sanitization settings example
