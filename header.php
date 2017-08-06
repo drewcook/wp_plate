@@ -18,14 +18,6 @@
 <link rel="profile" href="http://gmpg.org/xfn/11">
 
 <?php wp_head();
-	// Load in topbar styles only if options are in use
-	if ( get_option('header_topbar') or get_option('social_facebook') or get_option('social_twitter') or get_option('social_google') or get_option('social_instagram') or get_option('social_pinterest') ) :
-		echo "<link rel='stylesheet' href='" . get_template_directory_uri() . "/assets/css/aws.topbar.css' />";
-	endif;
-	// Load in mainbar styles only if options are in use
-	if ( get_option('site_logo') ) :
-		echo "<link rel='stylesheet' href='" . get_template_directory_uri() . "/assets/css/aws.mainbar.css' />";
-	endif;
 	// Load in header code snippets only if theme option is in use
 	if ( get_option('snippets_header') ) :
 		echo get_option('snippets_header');
@@ -35,7 +27,6 @@
 		echo "<style type='text/css' media='all'>" . get_option('custom_css') . "</style>";
 	endif;
 ?>
-
 
 </head>
 

@@ -149,13 +149,10 @@ function aws_scripts() {
 
 	// Base Theme CSS
 	wp_enqueue_style( 'aws', get_stylesheet_uri() );
-	// Bootstrap CSS
-	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/assets/css/bootstrap.min.css', '3.3.7' );
 	// Custom CSS
 	wp_enqueue_style( 'main', get_template_directory_uri() . '/assets/css/main.min.css' );
 	// Google Fonts
-	wp_enqueue_style( 'poppins', 'https://fonts.googleapis.com/css?family=Poppins:300,400,600' );
- 	wp_enqueue_style( 'libre-baskerville', 'https://fonts.googleapis.com/css?family=Libre+Baskerville:400,700' );
+	wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css?family=Poppins:300,400,600|Libre+Baskerville:400,700' );
 	// Font Awesome CDN
 	wp_enqueue_script( 'font-awesome', 'https://use.fontawesome.com/3942c42a99.js', true );
 	// All JS
