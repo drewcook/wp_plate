@@ -174,13 +174,8 @@ function aws_scripts() {
 
 	// Base Theme CSS
 	wp_enqueue_style( 'aws', get_stylesheet_uri() );
-	// Custom CSS
-	wp_enqueue_style( 'main', get_template_directory_uri() . '/assets/css/main.min.css' );
 	// Google Fonts
 	wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css?family=Poppins:300,400,600|Libre+Baskerville:400,700' );
-	// Local jQuery
-	/*wp_register_script( 'jquery', get_template_directory_uri() . '/1.jquery.min.js', false );
-	wp_enqueue_script( 'jquery' );*/
 	// All JS
 	wp_enqueue_script( 'main', get_template_directory_uri() . '/assets/js/main.min.js', true );
 

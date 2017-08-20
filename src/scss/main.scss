@@ -2,6 +2,9 @@
    Include Partials
    ========================================================================== */
 
+// wp theme meta
+@import "theme_setup";
+
 // vendors
 @import "bootstrap";
 @import "fontawesome";

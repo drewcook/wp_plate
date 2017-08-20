@@ -17,25 +17,26 @@ var gulp        = require("gulp"),
     pngquant    = require("imagemin-pngquant"),
     browserSync = require("browser-sync");
 
+
 // --------------------------------------------------------
 // Settings
 // Setting up source paths and distribution paths
 // --------------------------------------------------------
 
 var src = {
-    sass: "src/scss/**/*.scss",
-    js: "src/js/**/*.js",
     img: "src/img/*",
-    php: "../**/*.php"
+    js: "src/js/**/*.js",
+    sass: "src/scss/**/*.scss",
+    css: "src/css/*.css",
+    php: "../**/*.php",
 };
 
 var dist = {
-    js: "assets/js",
-    css: "assets/css",
     img: "assets/img",
-    min_css: "main.min.css",
-    min_js: "main.min.js"
+    js: "assets/js",
+    css: "./",
 };
+
 
 // --------------------------------------------------------
 // Error Handler
@@ -47,6 +48,26 @@ var onError = function(err) {
     console.log(err);
     this.emit('end');
 };
+
+
+// --------------------------------------------------------
+// Task: Images
+// Run all added images through optmization tools
+// --------------------------------------------------------
+
+gulp.task('img', function() {
+
+    return gulp.src(src.img)
+        .pipe(minify_img({
+            progressive: true,
+            svgoPlugins: [{removeViewBox: false}],
+            use: [pngquant()]
+        }))
+        .pipe(gulp.dest(dist.img))
+        .pipe(notify({message: 'Images optimized and minified.'}));
+
+});
+
 
 // --------------------------------------------------------
 // Task: Sass
@@ -62,11 +83,29 @@ gulp.task('sass', function() {
         }))
         .pipe(sass())
         .pipe(prefix('last 4 versions'))
-        .pipe(concat(dist.min_css))
-        .pipe(gulp.dest(dist.css))
+        .pipe(concat('theme_styles.min.css'))
         .pipe(minify_css())
+        .pipe(gulp.dest('src/css/'))
+        .pipe(notify({message: 'Sass compiled and minified'}))
+        .pipe(browserSync.reload({stream: true}));
+
+});
+
+
+// --------------------------------------------------------
+// Task: CSS
+// Combine minified compiled sass with style.css
+// --------------------------------------------------------
+
+gulp.task('css', ['sass'], function() {
+
+    return gulp.src(src.css)
+        .pipe(plumber({
+            errorHandler: onError
+        }))
+        .pipe(concat('style.css'))
         .pipe(gulp.dest(dist.css))
-        .pipe(notify({message: 'Styles compiled and minified'}))
+        .pipe(notify({message: 'CSS combined'}))
         .pipe(browserSync.reload({stream: true}));
 
 });
@@ -84,29 +123,10 @@ gulp.task('js', function() {
             errorHandler: onError
         }))
         .pipe(uglify())
-        .pipe(concat(dist.min_js))
+        .pipe(concat('main.min.js'))
         .pipe(gulp.dest(dist.js))
-        .pipe(notify({message: 'Scripts compiled and minified'}))
+        .pipe(notify({message: 'Scripts compiled and minified.'}))
         .pipe(browserSync.reload({stream: true}));
-
-});
-
-
-// --------------------------------------------------------
-// Task: Images
-// Run all added images through optmization tools
-// --------------------------------------------------------
-
-gulp.task('img', function() {
-
-    return gulp.src(src.img)
-        .pipe(minify_img({
-            progressive: true,
-            svgoPlugins: [{removeViewBox: false}],
-            use: [pngquant()]
-        }))
-        .pipe(gulp.dest(dist.img))
-        .pipe(notify({message: 'Images optimized and minified'}));
 
 });
 
@@ -118,14 +138,14 @@ gulp.task('img', function() {
 // on save
 // --------------------------------------------------------
 
-gulp.task('watch', function() {
+gulp.task('watch', ['css'], function() {
 
     browserSync.init({
         proxy: 'localhost'
     });
-    gulp.watch(src.js, ['js']);
-    gulp.watch(src.sass, ['sass']);
     gulp.watch(src.img, ['img']);
+    gulp.watch(src.sass, ['css']);
+    gulp.watch(src.js, ['js']);
     gulp.watch(src.php).on('change', browserSync.reload);
 
 });
@@ -136,4 +156,4 @@ gulp.task('watch', function() {
 // Runs all of the tasks with the command 'gulp'
 // --------------------------------------------------------
 
-gulp.task('default', ['watch', 'sass', 'js', 'img']);
+gulp.task('default', ['img', 'css', 'js', 'watch']);
