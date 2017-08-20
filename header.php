@@ -14,8 +14,6 @@
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title><?php wp_title('|', true, 'right'); bloginfo('name'); ?></title>
-<link rel="profile" href="http://gmpg.org/xfn/11">
 
 <?php wp_head();
 	// Load in header code snippets only if theme option is in use

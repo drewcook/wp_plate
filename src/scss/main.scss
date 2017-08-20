@@ -2,7 +2,11 @@
    Include Partials
    ========================================================================== */
 
+// vendors
 @import "bootstrap";
+@import "fontawesome";
+
+// theme
 @import "base";
 @import "header";
 @import "footer";

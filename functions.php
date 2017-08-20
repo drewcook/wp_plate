@@ -41,17 +41,24 @@ if ( ! function_exists( 'aws_setup' ) ) :
 endif;
 add_action( 'after_setup_theme', 'aws_setup' );
 
-/**
- * Set the content width in pixels, based on the theme's design and stylesheet.
- *
- * @global int $content_width
- */
-function aws_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'aws_content_width', 640 );
-}
-add_action( 'after_setup_theme', 'aws_content_width', 0 );
 
-// Remove unnessessary theme functionality
+
+/*
+   Reduce and Redirect Built-In jQuery Call
+   ========================================================================== */
+
+function modify_jquery() {
+    if (!is_admin()) {
+        wp_deregister_script('jquery');
+    }
+}
+add_action('init', 'modify_jquery');
+
+
+/*
+   Remove Wordpress Bloat
+   ========================================================================== */
+
 	// Emoji support
 remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
 remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
@@ -78,6 +85,24 @@ remove_filter( 'oembed_dataparse', 'wp_filter_oembed_result', 10 );
 remove_action( 'wp_head', 'wp_oembed_add_discovery_links' );
 	// Remove oEmbed-specific JavaScript from the front-end and back-end.
 remove_action( 'wp_head', 'wp_oembed_add_host_js' );
+
+
+/*
+   Remove Query Strings
+   ========================================================================== */
+
+function _remove_script_version( $src ){
+	// don't remove from google fonts call
+	if ( !strpos($src, "fonts.googleapis") ) :
+		$parts = explode( '?', $src );
+		return $parts[0];
+	else :
+		return $src;
+	endif;
+}
+add_filter( 'script_loader_src', '_remove_script_version', 15, 1 );
+add_filter( 'style_loader_src', '_remove_script_version', 15, 1 );
+
 
 /*
    Register Widgets
@@ -153,10 +178,11 @@ function aws_scripts() {
 	wp_enqueue_style( 'main', get_template_directory_uri() . '/assets/css/main.min.css' );
 	// Google Fonts
 	wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css?family=Poppins:300,400,600|Libre+Baskerville:400,700' );
-	// Font Awesome CDN
-	wp_enqueue_script( 'font-awesome', 'https://use.fontawesome.com/3942c42a99.js', true );
+	// Local jQuery
+	/*wp_register_script( 'jquery', get_template_directory_uri() . '/1.jquery.min.js', false );
+	wp_enqueue_script( 'jquery' );*/
 	// All JS
-	wp_enqueue_script( 'main', get_template_directory_uri() . '/assets/js/main.min.js', array('jquery'), true );
+	wp_enqueue_script( 'main', get_template_directory_uri() . '/assets/js/main.min.js', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
