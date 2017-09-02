@@ -77,13 +77,12 @@
 			</div>
 		</div><!-- .header-topbar -->
 
-<?php endif; ?>
-
-<?php if ( get_option('site_logo') ) : ?>
+<?php endif; if ( get_option('site_logo') or get_option('address_1') or get_option('address_2') or get_option('address_city') or get_option('address_state') or get_option('address_zip') or get_option('primary_phone') ) : ?>
 
 		<div class="container-fluid header-mainbar">
 			<div class="container">
 				<div class="row">
+				<?php if ( get_option('site_logo') ) : ?>
 					<div class="col-xs-12 col-sm-6 col-md-5 col-lg-4 header-mainbar-logo">
 						<?php if ( is_front_page() ) : ?>
 							<h1 class="site-title">
@@ -98,7 +97,8 @@
 								</a>
 							</p>
 						<?php endif; ?>
-					</div><!-- .header-mainbar-log -->
+					</div><!-- .header-mainbar-logo -->
+				<?php endif; ?>
 				<?php if ( get_option('address_1') or get_option('address_2') or get_option('address_city') or get_option('address_state') or get_option('address_zip') or get_option('primary_phone') ) : ?>
 					<div class="col-xs-12 col-sm-6 col-md-7 col-lg-8 header-mainbar-info">
 						<p>
