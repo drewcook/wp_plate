@@ -61,4 +61,7 @@ jQuery(document).ready(function($){
             });
         }
     });
+
+    // Remove rel="next" rel="prev" from post navigation links
+    $(".nav-links .nav-previous a, .nav-links .nav-next a").removeAttr('rel');
 });
