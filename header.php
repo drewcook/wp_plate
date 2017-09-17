@@ -84,19 +84,11 @@
 				<div class="row">
 				<?php if ( get_option('site_logo') ) : ?>
 					<div class="col-xs-12 col-sm-6 col-md-5 col-lg-4 header-mainbar-logo">
-						<?php if ( is_front_page() ) : ?>
-							<h1 class="site-title">
-								<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-										<img src="<?php echo get_option('site_logo'); ?>" alt="<?php bloginfo('name'); ?>" class="img-responsive">
-								</a>
-							</h1>
-						<?php else : ?>
-							<p class="site-title">
-								<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-										<img src="<?php echo get_option('site_logo'); ?>" alt="<?php bloginfo('name'); ?>" class="img-responsive">
-								</a>
-							</p>
-						<?php endif; ?>
+                        <p class="site-title">
+                            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+                                <img src="<?php echo get_option('site_logo'); ?>" alt="<?php bloginfo('name'); ?>" class="img-responsive">
+                            </a>
+                        </p>
 					</div><!-- .header-mainbar-logo -->
 				<?php endif; ?>
 				<?php if ( get_option('address_1') or get_option('address_2') or get_option('address_city') or get_option('address_state') or get_option('address_zip') or get_option('primary_phone') ) : ?>
