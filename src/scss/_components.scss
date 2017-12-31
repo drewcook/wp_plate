@@ -4,7 +4,8 @@
 
 /* Post Edit Link */
 a.post-edit-link {
-    color: $accent;
+	display: block;
+	color: $accent;
     &:hover {
         color: $gray;
     }

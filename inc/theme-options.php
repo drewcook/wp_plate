@@ -55,6 +55,7 @@ function aws_custom_settings() {
 	// === Register Settings ===
 	// General
 	register_setting( 'aws-settings-group', 'site_logo' );
+	register_setting( 'aws-settings-group', 'favicon' );
 	register_setting( 'aws-settings-group', 'header_topbar' );
 	register_setting( 'aws-settings-group', 'primary_phone' );
 	register_setting( 'aws-settings-group', 'primary_email' );
@@ -93,6 +94,7 @@ function aws_custom_settings() {
 	// === Fields ===
 	// General
 	add_settings_field( 'site-logo', 'Site Logo', 'aws_site_logo', 'aws_options', 'aws-general-options' );
+	add_settings_field( 'favicon', 'Favicon', 'aws_favicon', 'aws_options', 'aws-general-options' );
 	add_settings_field( 'header-topbar', 'Header Top Bar', 'aws_header_topbar', 'aws_options', 'aws-general-options' );
 	add_settings_field( 'primary-phone', 'Primary Number', 'aws_primary_phone', 'aws_options', 'aws-general-options' );
 	add_settings_field( 'primary-email', 'Primary Email', 'aws_primary_email', 'aws_options', 'aws-general-options' );
@@ -159,6 +161,23 @@ function aws_site_logo() {
 			<input type="button" class="button button-secondary" value="Remove" id="remove-button" />
 			<p class="description">Recommended ratio is 3:1</p>
 			<input type="hidden" id="site-logo-url" name="site_logo" value="'.$site_logo.'" />';
+	}
+}
+function aws_favicon() {
+	$favicon = esc_attr( get_option('favicon') );
+	if (empty($favicon)) {
+		echo "<div id='favicon-preview' style='background-image: url($favicon);'></div>";
+		echo
+		'<input type="button" class="button button-secondary" value="Upload Favicon" id="favicon-upload-button" />
+			<p class="description">Recommended size is 16x16 pixels</p>
+			<input type="hidden" id="favicon-url" name="favicon" value="" />';
+	} else {
+		echo "<div id='favicon-preview' style='background-image: url($favicon);'></div>";
+		echo
+			'<input type="button" class="button button-secondary" value="Update Favicon" id="favicon-upload-button" />
+			<input type="button" class="button button-secondary" value="Remove" id="favicon-remove-button" />
+			<p class="description">Recommended size is 16x16 pixels</p>
+			<input type="hidden" id="favicon-url" name="favicon" value="'.$favicon.'" />';
 	}
 }
 function aws_header_topbar() {
