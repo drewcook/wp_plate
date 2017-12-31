@@ -19,10 +19,12 @@ jQuery(document).ready(function($){
 
     // Sticky Navbar using Sticky Kit plugin
     $('.header-navbar').stick_in_parent();
-    $('#secondary').stick_in_parent();
+    /*$('#secondary').stick_in_parent({
+	    "parent": "#content",
+    });*/
 
     // Add Bootstrap 'img-responsive; class to all images on pages and posts
-    $('.site-main .entry-content img').each(function(){
+    $('#main .entry-content img').each(function(){
         $(this).addClass('img-responsive');
     });
 

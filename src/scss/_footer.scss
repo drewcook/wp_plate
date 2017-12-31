@@ -2,7 +2,6 @@
    Footer Styles
    ========================================================================== */
 
-
 footer#site-footer {
     border-top: 2px solid $primary_color;
     clear: both;
@@ -28,6 +27,12 @@ footer#site-footer {
                 text-transform: uppercase;
                 margin-bottom: 5px;
             }
+			table {
+				margin: auto;
+				@media (min-width: 768px) {
+					margin: 0;
+				}
+			}
         }
     }
     .copybar {

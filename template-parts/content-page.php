@@ -6,7 +6,6 @@
  *
  * @package AWS
  */
-
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -16,7 +15,6 @@
 
 	<div class="entry-content">
 		<?php
-
 			if ( get_the_post_thumbnail() ) :
 					$thumbnail_id = get_post_thumbnail_id( $post->ID );
 					$alt = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);

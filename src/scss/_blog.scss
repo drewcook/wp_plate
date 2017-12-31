@@ -1,0 +1,105 @@
+/* ==========================================================================
+   Blog Feed, Search Feed, Archive Feed, Categories Feed
+   ========================================================================== */
+
+body.blog, body.search, body.archive, body.category {
+	#main {
+		header.blog-header, header.search-header, header.archive-header, header.none-header {
+			margin: 0;
+			border-bottom: 1px solid $primary_color;
+			h1 {
+				margin: 0 0 5px;
+				span {
+					@extend h1;
+					font-size: 36px;
+					font-style: italic;
+				}
+			}
+			.archive-description {
+				p {
+					margin: 0;
+					font-style: italic;
+				}
+			}
+		}
+		article {
+			margin: 30px 0;
+			.entry-header {
+				margin-bottom: 10px;
+				h2 {
+					margin: 0;
+					a {
+						font-size: 26px;
+						color: $heading_color;
+					}
+				}
+				.entry-meta {
+					span {
+						font-size: 14px;
+						&.posted-on {
+							font-weight: bold;
+						}
+						a {
+							color: $dark;
+							font-size: 14px;
+							&:hover {
+								color: $accent;
+							}
+						}
+					}
+				}
+			}
+			.entry-summary {
+				margin: 0;
+			}
+			.entry-content {
+				img.featured-image {
+				}
+			}
+			.entry-footer {
+				border-top: 1px double $gray;
+				padding-top: 5px;
+				span {
+					display: block;
+					font-size: 14px;
+					a {
+						color: $gray;
+						font-size: 14px;
+						&:hover {
+							color: $accent;
+						}
+					}
+					&.tags-links a {
+						font-style: italic;
+					}
+				}
+				nav.navigation {
+					margin-top: 30px;
+					border-top: 1px solid #ccc;
+					padding-top: 15px;
+					.nav-previous, .nav-next {
+						a {
+							display: inline-block;
+							color: #fff;
+							background: $primary_color;
+							padding: 3px 10px;
+							font-size: 13px;
+							border-radius: 2px;
+							transition: background 0.2s;
+							&:hover {
+								background: $dark;
+								transition: background 0.2s;
+							}
+						}
+					}
+					.nav-previous {
+						float: left;
+					}
+					.nav-next {
+						float: right;
+					}
+				}
+			}
+		}
+	}
+}

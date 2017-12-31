@@ -14,16 +14,10 @@
 
 get_header(); ?>
 
-	<main id="main" class="site-main" role="main">
-
-		<?php
-		while ( have_posts() ) : the_post();
-
+	<main id="main" role="main">
+		<?php while ( have_posts() ) : the_post();
 			get_template_part( 'template-parts/content', 'front' );
-
-		endwhile; // End of the loop.
-		?>
-
+		endwhile; ?>
 	</main><!-- #main -->
 
 <?php

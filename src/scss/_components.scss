@@ -2,15 +2,6 @@
    Components Styles
    ========================================================================== */
 
-/* Framed Images */
-img.framed {
-    padding: 10px;
-    background: #fff;
-    border: 2px solid $secondary_color;
-    border-radius: 5px;
-    box-shadow: 0 1px 8px $dark;
-}
-
 /* Post Edit Link */
 a.post-edit-link {
     color: $accent;
@@ -65,99 +56,6 @@ a.btn-2 {
         padding: 5px 12px;
         &:hover {
             opacity: 0.8;
-        }
-    }
-}
-
-
-/* Blog Posts Page and Single Post Meta */
-body.blog #main, body.single #main, body.search #main, body.archive #main {
-    header.blog-title {
-        margin: 0;
-        border-bottom: 1px solid $primary_color;
-        h1.page-title {
-            margin: 0;
-        }
-    }
-    article {
-        margin: 50px 0;
-        header.entry-header {
-            h2.entry-title a {
-                font-size: 26px;
-                color: $heading_color;
-            }
-            .entry-meta {
-                .posted-on {
-                    color: $heading_color;
-                }
-            }
-        }
-        .entry-content {
-            img.featured-image {
-                margin: 0 auto 20px !important;
-                width: 100% !important;
-                &.dummy {
-                    max-width: 300px;
-                }
-            }
-        }
-        .entry-footer {
-            border-top: 1px double $gray;
-            margin-top: 20px;
-            padding-top: 15px;
-            span {
-                display: block;
-                a {
-                    color: $accent;
-                    &:hover {
-                        color: $gray;
-                    }
-                }
-                &.tags-links a {
-                    font-style: italic;
-                }
-            }
-            .next-title, .prev-title {
-                display: inline;
-                color: $heading_color;
-            }
-            .next-title {
-                float: right;
-            }
-        }
-    }
-    nav.navigation {
-        margin-top: 20px;
-        border-top: 3px double $primary_color;
-        padding: 5px 0;
-        .nav-previous, .nav-next {
-            display: inline-block;
-            a {
-                color: $accent;
-                &:hover {
-                    color: $primary_color;
-                }
-            }
-        }
-        .nav-next {
-            float: right;
-        }
-    }
-}
-body.single #main article {
-    margin: 0;
-    nav.navigation {
-        margin-top: 50px;
-    }
-    .entry-content {
-        img.featured-image {
-            @media (min-width: 992px) {
-                width: 300px !important;
-                margin-left: 10px !important;
-            }
-            @media (min-width: 1200px) {
-                width: 400px !important;
-            }
         }
     }
 }

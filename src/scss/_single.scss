@@ -1,0 +1,84 @@
+/* ==========================================================================
+   Single Post Styles
+   ========================================================================== */
+
+body.single {
+	article {
+		.entry-header {
+			h1 {
+				margin: 0;
+			}
+			.entry-meta {
+				margin-top: 10px;
+				span {
+					font-size: 15px;
+					&.posted-on {
+						font-weight: bold;
+					}
+					a {
+						color: $dark;
+						font-size: 15px;
+						&:hover {
+							color: $accent;
+						}
+					}
+				}
+			}
+		}
+		.entry-content {
+			img.featured-image {
+				@media (min-width: 992px) {
+					width: 300px !important;
+					margin-left: 10px !important;
+				}
+				@media (min-width: 1200px) {
+					width: 400px !important;
+				}
+			}
+		}
+		.entry-footer {
+			border-top: 1px double $gray;
+			padding-top: 5px;
+			span {
+				display: block;
+				font-size: 14px;
+				a {
+					color: $gray;
+					font-size: 14px;
+					&:hover {
+						color: $accent;
+					}
+				}
+				&.tags-links a {
+					font-style: italic;
+				}
+			}
+			nav.navigation {
+				margin-top: 30px;
+				border-top: 1px solid #ccc;
+				padding-top: 15px;
+				.nav-previous, .nav-next {
+					a {
+						display: inline-block;
+						color: #fff;
+						background: $primary_color;
+						padding: 3px 10px;
+						font-size: 13px;
+						border-radius: 2px;
+						transition: background 0.2s;
+						&:hover {
+							background: $dark;
+							transition: background 0.2s;
+						}
+					}
+				}
+				.nav-previous {
+					float: left;
+				}
+				.nav-next {
+					float: right;
+				}
+			}
+		}
+	}
+}

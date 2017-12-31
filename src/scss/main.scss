@@ -10,9 +10,13 @@
 @import "fontawesome";
 
 // theme
+@import "variables";
 @import "base";
+@import "components";
 @import "header";
 @import "footer";
-@import "components";
 @import "page";
+@import "blog";
+@import "single";
+@import "sidebar";
 @import "frontpage";

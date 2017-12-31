@@ -4,8 +4,8 @@
 
 #front-page {
     #main {
-        h1.entry-title {
-            margin: 0;
-        }
+		header.entry-header {
+			display: none;
+		}
     }
 }

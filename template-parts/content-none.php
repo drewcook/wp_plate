@@ -9,8 +9,8 @@
 
 ?>
 
-<section class="no-results not-found">
-	<header class="page-header">
+<section class="no-results">
+	<header class="none-header">
 		<h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'aws' ); ?></h1>
 	</header><!-- .page-header -->
 

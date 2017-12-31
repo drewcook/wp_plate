@@ -5,3 +5,6 @@
 #adminmenu .wp-menu-image img {
 	padding-top: 6px;
 }
+#wpadminbar .display-name {
+	color: #fff;
+}

@@ -18,46 +18,48 @@
 	</div><!-- #content / #front-page -->
 <?php endif; ?>
 
-    <footer id="site-footer" role="contentinfo">
+<div class="clearfix"></div>
+
+<footer id="site-footer" role="contentinfo">
+
 <?php if ( is_active_sidebar('footer-1') or is_active_sidebar('footer-2') or is_active_sidebar('footer-3') or is_active_sidebar('footer-4') ) : ?>
-        <div class="container-fluid footer-info">
-            <div class="container">
-                <div class="row">
-                    <?php if ( is_active_sidebar('footer-1') ) : ?>
-                        <div class="col-xs-12 col-sm-6 col-md-3">
-                            <?php dynamic_sidebar('footer-1'); ?>
-                        </div>
-                    <?php endif; ?>
-                    <?php if ( is_active_sidebar('footer-2') ) : ?>
-                        <div class="col-xs-12 col-sm-6 col-md-3">
-                            <?php dynamic_sidebar('footer-2'); ?>
-                        </div>
-                    <?php endif; ?>
-                    <?php if ( is_active_sidebar('footer-3') ) : ?>
-                        <div class="col-xs-12 col-sm-6 col-md-3">
-                            <?php dynamic_sidebar('footer-3'); ?>
-                        </div>
-                    <?php endif; ?>
-                    <?php if ( is_active_sidebar('footer-4') ) : ?>
-                        <div class="col-xs-12 col-sm-6 col-md-3">
-                            <?php dynamic_sidebar('footer-4'); ?>
-                        </div>
-                    <?php endif; ?>
-                </div>
+    <div class="container-fluid footer-info">
+        <div class="container">
+            <div class="row">
+                <?php if ( is_active_sidebar('footer-1') ) : ?>
+                    <div class="col-xs-12 col-sm-6 col-md-3">
+                        <?php dynamic_sidebar('footer-1'); ?>
+                    </div>
+                <?php endif; ?>
+                <?php if ( is_active_sidebar('footer-2') ) : ?>
+                    <div class="col-xs-12 col-sm-6 col-md-3">
+                        <?php dynamic_sidebar('footer-2'); ?>
+                    </div>
+                <?php endif; ?>
+                <?php if ( is_active_sidebar('footer-3') ) : ?>
+                    <div class="col-xs-12 col-sm-6 col-md-3">
+                        <?php dynamic_sidebar('footer-3'); ?>
+                    </div>
+                <?php endif; ?>
+                <?php if ( is_active_sidebar('footer-4') ) : ?>
+                    <div class="col-xs-12 col-sm-6 col-md-3">
+                        <?php dynamic_sidebar('footer-4'); ?>
+                    </div>
+                <?php endif; ?>
             </div>
-        </div><!-- .site-info -->
+        </div>
+    </div><!-- .footer-info -->
 <?php endif; ?>
 
-        <div class="container-fluid copybar">
-            <div class="container">
-                <p>&copy; <?php echo current_time('Y'); ?> <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-            <span class="sep"> | </span>
-            <?php printf( esc_html__( 'Website by %1$s', 'aws' ), "<a href='".esc_url('http://altheawebservices.com/')."' rel='designer'>".__( 'AWS', 'aws' )."</a>" ); ?>
-            </div>
-        </div><!-- copybar -->
-    </footer><!-- #site-footer -->
+    <div class="container-fluid copybar">
+        <div class="container">
+            <p>&copy; <?php echo current_time('Y'); ?> <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+        <span class="sep"> | </span>
+        <?php printf( esc_html__( 'Website by %1$s', 'aws' ), "<a href='".esc_url('http://altheawebservices.com/')."' rel='designer'>".__( 'AWS', 'aws' )."</a>" ); ?>
+        </div>
+    </div><!-- copybar -->
 
-</div><!-- #page -->
+</footer><!-- #site-footer -->
 
 <?php
     wp_footer();

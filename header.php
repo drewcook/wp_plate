@@ -26,14 +26,16 @@
 	endif;
 ?>
 
+    <!--?php include('json-ld.php'); ?-->
+    <script type="application/ld+json">// <![CDATA[
+        <?php echo json_encode($payload); ?>
+    // ]]></script>
+
 </head>
 
 <body <?php body_class(); ?>>
-<div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'aws' ); ?></a>
-
 	<header id="masthead" role="banner">
-
 <?php if ( get_option('header_topbar') or get_option('primary_email') or get_option('social_facebook') or get_option('social_twitter') or get_option('social_google') or get_option('social_instagram') or get_option('social_linkedin') or get_option('social_pinterest') or get_option('social_youtube') or get_option('social_yelp') or get_option('social_rss') ) : ?>
 
 		<div class="container-fluid header-topbar">

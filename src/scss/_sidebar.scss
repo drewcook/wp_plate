@@ -1,0 +1,25 @@
+/* ==========================================================================
+   Sidebar Styles
+   ========================================================================== */
+
+aside#secondary {
+	text-align: center;
+	margin-top: 40px;
+	@media (min-width: 768px) {
+		text-align: left;
+		margin-top: 0;
+	}
+	/*&.is_stuck {
+		margin-top: 70px;
+	}*/
+	.widget {
+		margin-bottom: 30px;
+		.widget-title {
+			display: block;
+			font-family: $serif;
+			font-size: 26px;
+			margin-top: 10px;
+			color: $heading_color;
+		}
+	}
+}
