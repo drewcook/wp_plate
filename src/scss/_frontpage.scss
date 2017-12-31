@@ -3,7 +3,54 @@
    ========================================================================== */
 
 #front-page {
-    #main {
+	#front-banner {
+		#front-carousel {
+			.carousel-inner {
+				.item {
+					img {
+						width: 100%;
+					}
+				}
+			}
+			.carousel-indicators {
+				display: none;
+				@media (min-width: 768px) {
+					display: block;
+				}
+			}
+			.carousel-control {
+				background: none;
+				width: initial;
+				top: 40%;
+				&.left {
+					left: 10px;
+					@media (min-width: 768px) {
+						left: 20px;
+					}
+				}
+				&.right {
+					right: 10px;
+					@media (min-width: 768px) {
+						right: 20px;
+					}
+				}
+				&:hover {
+					background: none;
+					.fa {
+						color: #fff;
+						transition: color 0.2s;
+					}
+				}
+				.fa {
+					color: #ccc;
+					font-size: 40px;
+					transition: color 0.2s;
+				}
+			}
+		}
+	}
+    #front-main {
+		padding: 40px 0;
 		header.entry-header {
 			display: none;
 		}
