@@ -32,17 +32,16 @@
 			<li data-target="#front-carousel" data-slide-to="2"></li>
 		</ol>
 		<!-- Left and right controls -->
-		<a class="left carousel-control" href="#front-carousel" data-slide="prev">
+		<a class="left carousel-control" href="#front-carousel" role="button" data-slide="prev">
 			<span class="fa fa-angle-left"></span>
 			<span class="sr-only">Previous</span>
 		</a>
-		<a class="right carousel-control" href="#front-carousel" data-slide="next">
+		<a class="right carousel-control" href="#front-carousel" role="button" data-slide="next">
 			<span class="fa fa-angle-right"></span>
 			<span class="sr-only">Next</span>
 		</a>
 	</div>
 </section><!-- #front-banner -->
-
 
 <section id="front-main">
 	<div class="container">

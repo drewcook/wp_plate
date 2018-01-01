@@ -51,7 +51,7 @@ jQuery(document).ready(function($){
     });
 
     //Parallax effect on links
-    $('a[href^="#"]').on('click',function (e) {
+    $('a[href^="#"]:not(.carousel-control)').on('click',function (e) {
         e.preventDefault();
         var target = this.hash;
         var $target = $(target);
