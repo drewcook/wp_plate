@@ -265,13 +265,13 @@ function aws_conversion_page() {
 }
 function aws_conversion_code() {
 	$conversion_code = esc_attr( get_option('conversion_code') );
-	echo '<pre class="pre-block"><textarea rows="10" cols="140" name="conversion_code" placeholder="Enter tracking code here" />'.$conversion_code.'</textarea><pre>';
+	echo '<pre class="pre-block"><textarea rows="10" cols="140" name="conversion_code" placeholder="Enter tracking code here" />'.$conversion_code.'</textarea></pre>';
 }
 
 // Custom CSS Page
 function aws_custom_css() {
 	$custom_css = esc_attr( get_option('custom_css') );
-	echo '<pre class="pre-block"><textarea rows="10" cols="140" name="custom_css" placeholder="Enter custom CSS here" />'.$custom_css.'</textarea><pre>';
+	echo '<pre class="pre-block"><textarea rows="10" cols="140" name="custom_css" placeholder="Enter custom CSS here" />'.$custom_css.'</textarea></pre>';
 }
 
 // Sanitization settings example
