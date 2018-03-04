@@ -52,20 +52,22 @@ function aws_options_resources() {
    ========================================================================== */
 
 function aws_custom_settings() {
-	// === Register Settings ===
+	/*
+	 * Register Settings
+	 */
 	// General
 	register_setting( 'aws-settings-group', 'site_logo' );
 	register_setting( 'aws-settings-group', 'favicon' );
 	register_setting( 'aws-settings-group', 'header_topbar' );
 	register_setting( 'aws-settings-group', 'primary_phone' );
 	register_setting( 'aws-settings-group', 'primary_email' );
-		// Address
+	// Address
 	register_setting( 'aws-settings-group', 'address_1' );
 	register_setting( 'aws-settings-group', 'address_2' );
 	register_setting( 'aws-settings-group', 'address_city' );
 	register_setting( 'aws-settings-group', 'address_state' );
 	register_setting( 'aws-settings-group', 'address_zip' );
-		// Social
+	// Social
 	register_setting( 'aws-settings-group', 'social_facebook', 'aws_sanitize_url_field' );
 	register_setting( 'aws-settings-group', 'social_twitter', 'aws_sanitize_url_field' );
 	register_setting( 'aws-settings-group', 'social_google', 'aws_sanitize_url_field' );
@@ -75,30 +77,38 @@ function aws_custom_settings() {
 	register_setting( 'aws-settings-group', 'social_youtube', 'aws_sanitize_url_field' );
 	register_setting( 'aws-settings-group', 'social_yelp', 'aws_sanitize_url_field' );
 	register_setting( 'aws-settings-group', 'social_rss', 'aws_sanitize_url_field' );
-	// Snippets
+	// Code Snippets
 	register_setting( 'aws-snippets-group', 'snippets_header' );
+	register_setting( 'aws-snippets-group', 'snippets_body' );
 	register_setting( 'aws-snippets-group', 'snippets_footer' );
 	register_setting( 'aws-snippets-group', 'conversion_page' );
 	register_setting( 'aws-snippets-group', 'conversion_code' );
 	// Custom CSS
 	register_setting( 'aws-css-group', 'custom_css' );
 
-	// === Sections ===
+	/*
+	 * Sections
+	 */
 	add_settings_section( 'aws-general-options', 'General Options', 'aws_general_options', 'aws_options' );
 	add_settings_section( 'aws-social-options', 'Social Options', 'aws_social_options', 'aws_options' );
 	add_settings_section( 'aws-header-snippets', 'Code Snippets Header', 'aws_snippets_header', 'aws_code_snippets' );
+	add_settings_section( 'aws-body-snippets', 'Code Snippets Body', 'aws_snippets_body', 'aws_code_snippets' );
 	add_settings_section( 'aws-footer-snippets', 'Code Snippets Footer', 'aws_snippets_footer', 'aws_code_snippets' );
 	add_settings_section( 'aws-conversion-tracking', 'Conversion Tracking', 'aws_snippets_conversion', 'aws_code_snippets' );
 	add_settings_section( 'aws-custom-css', 'Custom CSS', 'aws_custom_styles', 'aws_custom_css' );
 
-	// === Fields ===
+	/*
+	 * Fields
+	 */
 	// General
 	add_settings_field( 'site-logo', 'Site Logo', 'aws_site_logo', 'aws_options', 'aws-general-options' );
 	add_settings_field( 'favicon', 'Favicon', 'aws_favicon', 'aws_options', 'aws-general-options' );
 	add_settings_field( 'header-topbar', 'Header Top Bar', 'aws_header_topbar', 'aws_options', 'aws-general-options' );
 	add_settings_field( 'primary-phone', 'Primary Number', 'aws_primary_phone', 'aws_options', 'aws-general-options' );
 	add_settings_field( 'primary-email', 'Primary Email', 'aws_primary_email', 'aws_options', 'aws-general-options' );
+	// Address
 	add_settings_field( 'main-address', 'Address', 'aws_address', 'aws_options', 'aws-general-options' );
+	// Social
 	add_settings_field( 'social-facebook', 'Facebook URL', 'aws_social_facebook', 'aws_options', 'aws-social-options' );
 	add_settings_field( 'social-twitter', 'Twitter URL', 'aws_social_twitter', 'aws_options', 'aws-social-options' );
 	add_settings_field( 'social-google', 'Google+ URL', 'aws_social_google', 'aws_options', 'aws-social-options' );
@@ -110,12 +120,12 @@ function aws_custom_settings() {
 	add_settings_field( 'social-rss', 'RSS Feed URL', 'aws_social_rss', 'aws_options', 'aws-social-options' );
 	// Code Snippets
 	add_settings_field( 'header-snippets', 'Header Snippets', 'aws_header_snippets', 'aws_code_snippets', 'aws-header-snippets' );
+	add_settings_field( 'body-snippets', 'Body Snippets', 'aws_body_snippets', 'aws_code_snippets', 'aws-body-snippets' );
 	add_settings_field( 'footer-snippets', 'Footer Snippets', 'aws_footer_snippets', 'aws_code_snippets', 'aws-footer-snippets' );
 	add_settings_field( 'conversion-page', 'Conversion Page', 'aws_conversion_page', 'aws_code_snippets', 'aws-conversion-tracking' );
 	add_settings_field( 'conversion-code', 'Tracking Code', 'aws_conversion_code', 'aws_code_snippets', 'aws-conversion-tracking' );
 	// Custom CSS
 	add_settings_field( 'custom-css', 'Custom CSS', 'aws_custom_css', 'aws_custom_css', 'aws-custom-css' );
-
 }
 
 /*
@@ -130,6 +140,9 @@ function aws_social_options() {
 }
 function aws_snippets_header() {
 	echo 'Use this section to input custom code snippets within the <strong>head</strong> of the document.';
+}
+function aws_snippets_body() {
+	echo 'Use this section to input custom code snippets after the opening <strong>body</strong> tag of the document.';
 }
 function aws_snippets_footer() {
 	echo 'Use this section to input custom code snippets before the closing <strong>body</strong> tag of the document.';
@@ -246,6 +259,10 @@ function aws_social_rss() {
 function aws_header_snippets() {
 	$header_snippets = esc_attr( get_option('snippets_header') );
 	echo '<pre class="pre-block"><textarea rows="10" cols="140" name="snippets_header" placeholder="Enter code snippets here" />'.$header_snippets.'</textarea></pre>';
+}
+function aws_body_snippets() {
+	$body_snippets = esc_attr( get_option('snippets_body') );
+	echo '<pre class="pre-block"><textarea rows="10" cols="140" name="snippets_body" placeholder="Enter code snippets here" />'.$body_snippets.'</textarea></pre>';
 }
 function aws_footer_snippets() {
 	$footer_snippets = esc_attr( get_option('snippets_footer') );
