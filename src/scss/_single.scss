@@ -3,28 +3,10 @@
    ========================================================================== */
 
 body.single {
+	#content {
+		padding-top: 0;
+	}
 	article {
-		.entry-header {
-			h1 {
-				margin: 0;
-			}
-			.entry-meta {
-				margin-top: 10px;
-				span {
-					font-size: 15px;
-					&.posted-on {
-						font-weight: bold;
-					}
-					a {
-						color: $dark;
-						font-size: 15px;
-						&:hover {
-							color: $accent;
-						}
-					}
-				}
-			}
-		}
 		.entry-content {
 			img.featured-image {
 				@media (min-width: 992px) {
@@ -37,14 +19,20 @@ body.single {
 			}
 		}
 		.entry-footer {
-			border-top: 1px double $gray;
-			padding-top: 5px;
+			margin-top: 20px;
+			.entry-footer-meta {
+				padding: 15px 10px 5px;
+				background: $light;
+			}
 			span {
 				display: block;
 				font-size: 14px;
+				margin-bottom: 10px;
+				font-weight: bold;
 				a {
-					color: $gray;
+					color: $dark;
 					font-size: 14px;
+					font-weight: 300;
 					&:hover {
 						color: $accent;
 					}
@@ -54,7 +42,7 @@ body.single {
 				}
 			}
 			nav.navigation {
-				margin-top: 30px;
+				margin-top: 15px;
 				border-top: 1px solid #ccc;
 				padding-top: 15px;
 				.nav-previous, .nav-next {

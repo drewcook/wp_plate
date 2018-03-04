@@ -2,6 +2,46 @@
    Components Styles
    ========================================================================== */
 
+/* Page/Post Header Banner */
+header.banner-header {
+	text-align: center;
+	padding: 50px 0;
+	margin-bottom: 40px;
+	background: $dark;
+	h1.banner-title {
+		font-size: 26px;
+		margin: 0;
+		color: $light;
+		text-shadow: 2px 2px 1px #000;
+		@media (min-width: 768px) {
+			font-size: 30px;
+		}
+		@media (min-width: 992px) {
+			font-size: 34px;
+		}
+	}
+	.entry-meta {
+		margin-top: 7px;
+		span {
+			font-size: 14px;
+			color: $light;
+			&.posted-on {
+				font-weight: bold;
+			}
+			&.author {
+				font-style: italic;
+			}
+			a {
+				color: $light;
+				font-size: 14px;
+				&:hover {
+					color: $accent;
+				}
+			}
+		}
+	}
+}
+
 /* Post Edit Link */
 a.post-edit-link {
 	display: block;
@@ -9,6 +49,52 @@ a.post-edit-link {
     &:hover {
         color: $gray;
     }
+}
+
+/* Social Icons */
+ul.social-list {
+	text-align: center;
+	list-style: none;
+	padding-left: 0px;
+	margin: 0 auto;
+	@media (min-width: 768px) {
+		float: right;
+	}
+	li {
+		display: inline-block;
+		padding: 3px 7px;
+		a {
+			color: #ddd;
+			font-size: 20px;
+			&:hover {
+				color: #fff;
+			}
+			i {
+				vertical-align: middle;
+			}
+		}
+	}
+}
+
+/* Recent Posts */
+.widget_recent_entries {
+	ul {
+		li {
+			margin-bottom: 12px;
+			line-height: 1.3;
+			a {
+				font-size: 15px;
+				line-height: 1.2;
+			}
+			.post-date {
+				display: block;
+				font-size: 12px;
+				font-style: italic;
+				color: $gray;
+				line-height: 1.2;
+			}
+		}
+	}
 }
 
 /* Buttons */

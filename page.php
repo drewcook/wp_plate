@@ -14,6 +14,11 @@
 
 get_header(); ?>
 
+<header class="banner-header">
+	<?php the_title( '<h1 class="banner-title">', '</h1>' ); ?>
+</header><!-- .entry-header -->
+
+<div class="container">
 	<div class="row">
 		<div class="col-xs-12 col-sm-8 col-md-9">
 			<main id="main" role="main">
@@ -26,6 +31,7 @@ get_header(); ?>
 		</div>
 		<?php get_sidebar(); ?>
 	</div>
+</div>
 
 <?php
 get_footer();

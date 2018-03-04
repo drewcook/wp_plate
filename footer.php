@@ -11,7 +11,7 @@
 
 ?>
 
-<?php if (is_front_page()) : ?>
+<?php if (is_front_page() || is_page() || is_single()) : ?>
         </div><!-- #content / #front-page -->
 <?php else : ?>
         </div><!-- .container -->
@@ -53,9 +53,9 @@
 
     <div class="container-fluid copybar">
         <div class="container">
-            <p>&copy; <?php echo current_time('Y'); ?> <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-        <span class="sep"> | </span>
-        <?php printf( esc_html__( 'Website by %1$s', 'aws' ), "<a href='".esc_url('http://altheawebservices.com/')."' rel='designer'>".__( 'AWS', 'aws' )."</a>" ); ?>
+            <p>
+	            &copy; <?php echo current_time('Y'); ?> <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a><span class="sep"> | </span><?php printf( esc_html__( 'Website by %1$s', 'aws' ), "<a href='".esc_url('http://altheawebservices.com/')."' rel='designer'>".__( 'Althea Web Services', 'aws' )."</a>" ); ?>
+            </p>
         </div>
     </div><!-- copybar -->
 

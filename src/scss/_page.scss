@@ -2,8 +2,10 @@
    Page Styles
    ========================================================================== */
 
-/* Page Featured Images */
 body.page {
+	#content {
+		padding-top: 0;
+	}
 	#main {
 		article {
 			.entry-content {
