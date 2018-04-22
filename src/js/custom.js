@@ -42,7 +42,7 @@ jQuery(document).ready(function($){
 
     $('body').on('click', function(event) {
         $parent = $(event.target).parent();
-        if (event.target.id == ('search-form-wrapper') || $parent.is('label') ) {
+        if (event.target.id === ('search-form-wrapper') || $parent.is('label') ) {
             return;
         }
         if ( $('body').hasClass('search-is-open') ) {

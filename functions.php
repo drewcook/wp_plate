@@ -163,8 +163,6 @@ function aws_scripts() {
 	wp_enqueue_style( 'aws', get_stylesheet_uri() );
 	// Google Fonts
 	wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css?family=Poppins:300,400,600|Libre+Baskerville:400,700' );
-	// All JS - Remove loading WP native jQuery for theme because of local copy
-	wp_deregister_script('jquery');
 	wp_enqueue_script( 'main', get_template_directory_uri() . '/assets/js/main.min.js', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
