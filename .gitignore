@@ -5,6 +5,7 @@ sass-cache/
 *.log
 
 src/css/theme_styles.min.css
+style.css
 
 # OS generated files #
 ######################
