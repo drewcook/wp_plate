@@ -4,6 +4,8 @@ node_modules/
 sass-cache/
 *.log
 
+src/css/theme_styles.min.css
+
 # OS generated files #
 ######################
 .DS_Store
@@ -13,3 +15,6 @@ sass-cache/
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+#PhpStorm
+.idea/
