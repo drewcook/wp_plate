@@ -163,7 +163,7 @@ function aws_scripts() {
 	wp_enqueue_style( 'aws', get_stylesheet_uri() );
 	// Google Fonts
 	wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css?family=Poppins:300,400,600|Libre+Baskerville:400,700' );
-	wp_enqueue_script( 'main', get_template_directory_uri() . '/assets/js/main.min.js', true );
+	wp_enqueue_script( 'main', get_template_directory_uri() . '/assets/js/main.min.js', array("jquery"), "1.0.0", true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
