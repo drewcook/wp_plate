@@ -4,26 +4,24 @@
 
 html {
     body {
-        font-family: $sans-serif;
-        font-weight: 400;
+        font-family: $os-light;
         h1, h2, h3, h4, h5, h6 {
-            font-family: $serif;
-            font-weight: 700;
-            line-height: 1.1;
+            font-family: $os-bold;
+            line-height: 1.2;
             color: $heading_color;
 			span, a {
 				font-weight: inherit;
 				font-style: inherit;
 			}
         }
-        p, ul li, ol li, span, a {
-            font-size: 16px;
+        p, ul li, ol li, span, a, address, strong, dl, dt, dd, th, td {
+            font-family: $os-light;
+			font-size: 16px;
             line-height: 1.4;
-            font-weight: 300;
             color: $dark;
         }
-        strong {
-            font-weight: 600;
+        strong, dt {
+            font-family: $os-semi;
         }
         a:link {
             text-decoration: none;
@@ -86,6 +84,26 @@ html {
 					}
 					@media (min-width: 992px) {
 						font-size: 21px;
+					}
+				}
+				h5 {
+					font-size: 14px;
+					margin: 15px 0 5px;
+					@media (min-width: 768px) {
+						font-size: 16px;
+					}
+					@media (min-width: 992px) {
+						font-size: 18px;
+					}
+				}
+				h6 {
+					font-size: 13px;
+					margin: 10px 0 5px;
+					@media (min-width: 768px) {
+						font-size: 15px;
+					}
+					@media (min-width: 992px) {
+						font-size: 16px;
 					}
 				}
 				a {

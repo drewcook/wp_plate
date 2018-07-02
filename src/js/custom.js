@@ -18,10 +18,11 @@ jQuery(document).ready(function($){
     });
 
     // Sticky Navbar using Sticky Kit plugin
-    $('.header-navbar').stick_in_parent();
-    /*$('#secondary').stick_in_parent({
-	    "parent": "#content",
-    });*/
+	if (window.innerWidth < 768) {
+		$(".header-navbar").stick_in_parent();
+	} else {
+		$("header#masthead").stick_in_parent();
+	}
 
     // Add Bootstrap 'img-responsive; class to all images on pages and posts
     $('#main .entry-content img').each(function(){

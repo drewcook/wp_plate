@@ -142,7 +142,7 @@
 									<span class="icon-bar"></span>
 									<span class="icon-bar"></span>
 								</button>
-								<a class="navbar-brand hidden-sm hidden-md hidden-lg" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo('name'); ?></a>
+								<a class="navbar-brand hidden-sm hidden-md hidden-lg" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">Menu</a>
 							</div>
 							<?php wp_nav_menu( array(
 								'theme_location' => 'primary',

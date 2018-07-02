@@ -12,12 +12,10 @@
 	<div class="entry-content">
 		<?php
 			if ( get_the_post_thumbnail() ) :
-					$thumbnail_id = get_post_thumbnail_id( $post->ID );
-					$alt = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);
-					echo "<img src=".get_the_post_thumbnail_url()." class='img-responsive featured-image alignright framed' alt='".$alt."' />";
-				else :
-					echo "<img src='".get_template_directory_uri()."/assets/img/featured-image.png' class='img-responsive featured-image alignright dummy' alt='The Post Thumbnail' />";
-				endif;
+				$thumbnail_id = get_post_thumbnail_id( $post->ID );
+				$alt = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);
+				echo "<img src=".get_the_post_thumbnail_url()." class='img-responsive featured-image alignright framed' alt='".$alt."' />";
+			endif;
 			
 			the_content();
 

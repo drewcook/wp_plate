@@ -1,0 +1,41 @@
+/* ==========================================================================
+   Variables
+   ========================================================================== */
+
+/* Colors */
+$light: #efefef;
+$dark: #333;
+$gray: #aaa;
+$primary_color: #000f26;
+$secondary_color: #00efbf;
+$secondary_dark: #1a2624;
+$accent: #00efbf;
+$heading_color: #1a2624;
+
+/* Fonts */
+@font-face {
+	font-family: "OpenSans Light";
+	src: url("assets/fonts/OpenSans-Light.ttf") format("truetype");
+}
+@font-face {
+	font-family: "OpenSans Regular";
+	src: url("assets/fonts/OpenSans-Regular.ttf") format("truetype");
+}
+@font-face {
+	font-family: "OpenSans Semibold";
+	src: url("assets/fonts/OpenSans-Semibold.ttf") format("truetype");
+}
+@font-face {
+	font-family: "OpenSans Bold";
+	src: url("assets/fonts/OpenSans-Bold.ttf") format("truetype");
+}
+@font-face {
+	font-family: "OpenSans Extra";
+	src: url("assets/fonts/OpenSans-ExtraBold.ttf") format("truetype");
+}
+$os-light: "OpenSans Light", sans-serif;
+$os-reg: "OpenSans Regular", sans-serif;
+$os-semi: "OpenSans Semibold", sans-serif;
+$os-bold: "OpenSans Bold", sans-serif;
+$os-extra: "OpenSans Extra", sans-serif;
+$serif: Times, serif;

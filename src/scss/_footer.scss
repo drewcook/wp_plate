@@ -15,11 +15,15 @@ footer#site-footer {
         p, a {
             font-size: 14px;
         }
+		a:hover {
+			color: $accent;
+		}
         @media (min-width: 768px) {
             text-align: left;
         }
         .widget {
             margin-bottom: 20px;
+			font-size: 14px;
             .widget-title {
                 color: $heading_color;
                 display: block;
@@ -31,6 +35,16 @@ footer#site-footer {
 				margin: auto;
 				@media (min-width: 768px) {
 					margin: 0;
+				}
+				th, td {
+					font-size: 14px;
+					padding: 3px;
+				}
+			}
+			&.widget_recent_entries {
+				li {
+					margin-bottom: 8px;
+					line-height: 1;
 				}
 			}
         }
