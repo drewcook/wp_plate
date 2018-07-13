@@ -179,6 +179,5 @@ require get_template_directory() . '/inc/template-tags.php';
 require get_template_directory() . '/inc/extras.php';
 require get_template_directory() . '/inc/customizer.php';
 require get_template_directory() . '/inc/theme-options.php';
-require get_template_directory() . '/inc/json-ld.php';
 // Require the Bootstrap Nav-Walker
 require_once( get_template_directory() . '/inc/wp_bootstrap_navwalker.php' );

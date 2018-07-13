@@ -26,12 +26,6 @@
 		echo "<style type='text/css' media='all'>" . get_option('custom_css') . "</style>";
 	endif;
 ?>
-
-    <!--?php include('json-ld.php'); ?-->
-    <script type="application/ld+json">// <![CDATA[
-        <?php echo json_encode($payload); ?>
-    // ]]></script>
-
 </head>
 
 <body <?php body_class(); ?>>
