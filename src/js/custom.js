@@ -5,21 +5,31 @@ jQuery(document).ready(function($){
     $lvl_2_nav = $('li.dropdown > ul.dropdown-menu > li');
 
     // Show level 2 items on top level hover
-    $lvl_1_nav.hover(function(){
+    $lvl_1_nav.on("mouseenter", function(){
         if ($(this).hasClass('dropdown')) {
-            $(this).children('ul.dropdown-menu').toggle();
+            $(this).children('ul.dropdown-menu').show();
         }
     });
+	$lvl_1_nav.on("mouseleave", function(){
+		if ($(this).hasClass('dropdown')) {
+			$(this).children('ul.dropdown-menu').hide();
+		}
+	});
     // Show extra levels on navigation
-    $lvl_2_nav.hover(function(){
-        if ($(this).hasClass('dropdown')) {
-            $(this).children('ul.dropdown-menu').toggle();
-        }
-    });
+	$lvl_2_nav.on("mouseenter", function(){
+		if ($(this).hasClass('dropdown')) {
+			$(this).children('ul.dropdown-menu').show();
+		}
+	});
+	$lvl_2_nav.on("mouseleave", function(){
+		if ($(this).hasClass('dropdown')) {
+			$(this).children('ul.dropdown-menu').hide();
+		}
+	});
 
     // Sticky Navbar using Sticky Kit plugin
 	if (window.innerWidth < 768) {
-		$(".header-navbar").stick_in_parent();
+		$(".header-nav").stick_in_parent();
 	} else {
 		$("header#masthead").stick_in_parent();
 	}

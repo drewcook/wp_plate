@@ -3,89 +3,82 @@
    ========================================================================== */
 
 header#masthead {
-	&.is_stuck {
-		position: fixed !important;
-		top: 0 !important;
-		bottom: initial !important;
-		left: 0;
-		right: 0;
-		z-index: 99;
-		box-shadow: 0 0 8px #aaa;
-		border-top: 0;
+	padding: 5px 0;
+	background: #fff;
+	@media (min-width: 992px) {
+		padding: 10px 0;
 	}
-    .header-topbar {
-        background-color: #000;
-        p {
-            margin: 5px auto;
-            color: #efefef;
-            text-align: center;
-            font-size: 14px;
-            @media (min-width: 768px) {
-                text-align: left;
-                font-size: 15px;
-                margin-top: 7px;
-            }
-        }
-    }
-    .header-mainbar {
-        background-color: #fff;
-        padding: 10px 0 10px;
-        @media (min-width: 768px) {
-            padding: 15px 0;
-        }
-        .header-mainbar-logo {
-            .site-title {
-                margin: 0;
-				img {
-					margin: 0 auto 15px;
-					width: 100%;
-					max-width: 300px;
-					@media (min-width: 768px) {
-						margin-bottom: 0;
-					}
+	> .container {
+		@media (min-width: 992px) {
+			position: relative;
+		}
+	}
+	.header-logo {
+		.site-title {
+			margin: 0;
+			img {
+				margin: 0 auto 10px;
+				width: 100%;
+				max-width: 300px;
+				@media (min-width: 992px) {
+					margin-bottom: 0;
 				}
-            }
-        }
-        .header-mainbar-info {
-            text-align: center;
-            @media (min-width: 768px) {
-                text-align: right;
-                margin-top: 30px;
-            }
-            p {
-				margin: 0;
-                &.header-phone {
-                    i {
-                        vertical-align: middle;
-                    }
-                }
-            }
-        }
-    }
-    .header-navbar {
-        background: $light;
-        border-bottom: 2px solid $primary_color;
-        border-top: 2px solid $primary_color;
-        position: relative;
-        &.is_stuck {
-            position: fixed !important;
-            top: 0 !important;
-            bottom: initial !important;
-            left: 0;
-            right: 0;
-            z-index: 99;
-            box-shadow: 0 0 8px #aaa;
-            border-top: 0;
-        }
-        div.col-sm-2 {
-            text-align: right;
-        }
+			}
+		}
+	}
+    .header-nav {
+		text-align: center;
+		background: #fff;
+		@media (min-width: 992px) {
+			text-align: right;
+			position: absolute;
+			bottom: 0;
+			right: 0;
+		}
+		.header-info {
+			font-size: 20px;
+			text-transform: uppercase;
+			margin: 0;
+			color: $primary_color;
+			font-family: $os-extra;
+			@media (min-width: 992px) {
+				font-size: 24px;
+			}
+			@media (min-width: 1200px) {
+				font-size: 26px;
+			}
+			i {
+				vertical-align: middle;
+				margin-left: 10px;
+				font-size: inherit;
+				color: inherit;
+			}
+			a {
+				font-family: inherit;
+				font-size: inherit;
+				color: inherit;
+				&:hover {
+					color: $secondary_color;
+				}
+			}
+		}
         nav.navbar {
-            margin-bottom: 0;
-            min-height: 0;
-            border: none;
-            background: none;
-            border-radius: 0;
+			margin: 5px 0 0;
+			min-height: 0;
+			border: none;
+			background: none;
+			border-radius: 0;
+			@media (min-width: 768px) and (max-width: 991px) {
+				display: inline-block;
+				margin-bottom: -4px;
+			}
+			@media (min-width: 992px) {
+				float: right;
+				margin-top: 20px;
+			}
+			@media (min-width: 1200px) {
+				margin-top: 25px;
+			}
             .navbar-header {
                 button.navbar-toggle {
                     margin-right: 0;
@@ -108,9 +101,13 @@ header#masthead {
                                 padding: 10px;
                             }
                             @media (min-width: 992px) {
-                                font-size: 17px;
-                                padding: 10px 15px;
+                                font-size: 15px;
+                                padding: 10px;
                             }
+							@media (min-width: 1200px) {
+								font-size: 16px;
+								padding: 10px 12px;
+							}
                             .caret {
                                 display: none;
                             }
@@ -124,7 +121,7 @@ header#masthead {
                             color: $light;
                         }
                         ul {
-                            background: $light;
+                            background: #fff;
                             border: none;
                             border-radius: 0px;
                             width: 100%;
@@ -133,11 +130,14 @@ header#masthead {
                                 position: absolute;
                                 width: initial;
                                 padding: 0;
-                                border: 2px solid $primary_color;
+                                border-bottom: 3px solid $primary_color;
                             }
-                            li a {
-                                padding-top: 10px;
-                                padding-bottom: 10px;
+                            li {
+								a {
+									font-size: 90%;
+									padding-top: 8px;
+									padding-bottom: 8px;
+								}
                             }
                             ul {
                                 width: 100%;
@@ -147,7 +147,7 @@ header#masthead {
                                     position: absolute;
                                     width: initial;
                                     left: 100%;
-                                    top: -2px;
+                                    top: -1px;
                                 }
                                 li a {
                                     padding-top: 10px;
@@ -159,43 +159,25 @@ header#masthead {
                 }
             }
         }
-        a.open-search {
-            background: $primary_color;
-            color: $light;
-            padding: 9px 15px;
-            line-height: 40px;
-        }
-        .search-form-wrapper {
-            position: absolute;
-            top: 0;
-            right: 0;
-            left: 0;
-            background: rgba(0,0,0,0.8);
-            height: 100%;
-            opacity: 0;
-            visibility: hidden;
-            form.search-form {
-                input {
-                    display: inline-block;
-                    background: none;
-                    border: none;
-                    text-align: right;
-                    line-height: 40px;
-                    padding: 0;
-                    color: #fff;
-                    &:focus {
-                        outline: none;
-                    }
-                    &[type='submit'] {
-                        display: none;
-                    }
-                }
-            }
-        }
+		&.is_stuck {
+			position: fixed !important;
+			top: 0 !important;
+			bottom: initial !important;
+			left: 0;
+			right: 0;
+			z-index: 99;
+			box-shadow: 0 0 8px #aaa;
+			border-top: 0;
+		}
     }
-}
-
-body.search-is-open .search-form-wrapper {
-    opacity: 1 !important;
-    visibility: visible !important;
+	&.is_stuck {
+		position: fixed !important;
+		top: 0 !important;
+		bottom: initial !important;
+		left: 0;
+		right: 0;
+		z-index: 99;
+		box-shadow: 0 0 8px #aaa;
+		border-top: 0;
+	}
 }

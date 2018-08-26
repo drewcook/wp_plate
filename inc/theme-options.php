@@ -58,15 +58,9 @@ function aws_custom_settings() {
 	// General
 	register_setting( 'aws-settings-group', 'site_logo' );
 	register_setting( 'aws-settings-group', 'favicon' );
-	register_setting( 'aws-settings-group', 'header_topbar' );
+	register_setting( 'aws-settings-group', 'header_info' );
 	register_setting( 'aws-settings-group', 'primary_phone' );
 	register_setting( 'aws-settings-group', 'primary_email' );
-	// Address
-	register_setting( 'aws-settings-group', 'address_1' );
-	register_setting( 'aws-settings-group', 'address_2' );
-	register_setting( 'aws-settings-group', 'address_city' );
-	register_setting( 'aws-settings-group', 'address_state' );
-	register_setting( 'aws-settings-group', 'address_zip' );
 	// Social
 	register_setting( 'aws-settings-group', 'social_facebook', 'aws_sanitize_url_field' );
 	register_setting( 'aws-settings-group', 'social_twitter', 'aws_sanitize_url_field' );
@@ -103,11 +97,9 @@ function aws_custom_settings() {
 	// General
 	add_settings_field( 'site-logo', 'Site Logo', 'aws_site_logo', 'aws_options', 'aws-general-options' );
 	add_settings_field( 'favicon', 'Favicon', 'aws_favicon', 'aws_options', 'aws-general-options' );
-	add_settings_field( 'header-topbar', 'Header Top Bar', 'aws_header_topbar', 'aws_options', 'aws-general-options' );
+	add_settings_field( 'header-info', 'Header Info', 'aws_header_info', 'aws_options', 'aws-general-options' );
 	add_settings_field( 'primary-phone', 'Primary Number', 'aws_primary_phone', 'aws_options', 'aws-general-options' );
 	add_settings_field( 'primary-email', 'Primary Email', 'aws_primary_email', 'aws_options', 'aws-general-options' );
-	// Address
-	add_settings_field( 'main-address', 'Address', 'aws_address', 'aws_options', 'aws-general-options' );
 	// Social
 	add_settings_field( 'social-facebook', 'Facebook URL', 'aws_social_facebook', 'aws_options', 'aws-social-options' );
 	add_settings_field( 'social-twitter', 'Twitter URL', 'aws_social_twitter', 'aws_options', 'aws-social-options' );
@@ -193,9 +185,9 @@ function aws_favicon() {
 			<input type="hidden" id="favicon-url" name="favicon" value="'.$favicon.'" />';
 	}
 }
-function aws_header_topbar() {
-	$header_topbar = esc_attr( get_option('header_topbar') );
-	echo '<input type="text" name="header_topbar" value="'.$header_topbar.'" placeholder="Enter anything to be displayed in a bar above header." />';
+function aws_header_info() {
+	$header_info = esc_attr( get_option('header_info') );
+	echo '<input type="text" name="header_info" value="'.$header_info.'" placeholder="Enter anything to be displayed in the header above the navigation." />';
 }
 function aws_primary_phone() {
 	$primary_phone = esc_attr( get_option('primary_phone') );
@@ -204,19 +196,6 @@ function aws_primary_phone() {
 function aws_primary_email() {
 	$primary_email = esc_attr( get_option('primary_email') );
 	echo '<input type="email" name="primary_email" value="'.$primary_email.'" placeholder="example@email.com" />';
-}
-function aws_address() {
-	$address_1 = esc_attr( get_option('address_1') );
-	$address_2 = esc_attr( get_option('address_2') );
-	$address_city = esc_attr( get_option('address_city') );
-	$address_state = esc_attr( get_option('address_state') );
-	$address_zip = esc_attr( get_option('address_zip') );
-
-	echo '<input type="text" name="address_1" value="'.$address_1.'" placeholder="Street Address" /><br>
-	<input type="text" name="address_2" value="'.$address_2.'" placeholder="apt, suite, unit, etc." /><br>
-	<input type="text" name="address_city" value="'.$address_city.'" placeholder="City" /><br>
-	<input type="text" name="address_state" value="'.$address_state.'" placeholder="State" /><br>
-	<input type="text" name="address_zip" value="'.$address_zip.'" placeholder="Zipcode" />';
 }
 function aws_social_facebook() {
 	$social_facebook = esc_attr( get_option('social_facebook') );
