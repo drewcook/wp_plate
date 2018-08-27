@@ -9,15 +9,6 @@
 
 get_header(); ?>
 
-<header class="banner-header">
-	<?php the_title( '<h1 class="banner-title">', '</h1>' ); ?>
-	<?php if ( 'post' === get_post_type() ) : ?>
-	<div class="entry-meta">
-		<?php aws_posted_on(); ?>
-	</div><!-- .entry-meta -->
-	<?php endif; ?>
-</header><!-- .entry-header -->
-
 <div class="container">
 	<div class="row">
 		<div class="col-xs-12 col-sm-8 col-md-9">

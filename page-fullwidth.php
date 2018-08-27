@@ -9,10 +9,6 @@
 
 get_header(); ?>
 
-<header class="banner-header">
-	<?php the_title( '<h1 class="banner-title">', '</h1>' ); ?>
-</header><!-- .entry-header -->
-
 <div class="container">
 	<main id="main" role="main">
 		<?php while ( have_posts() ) : the_post();

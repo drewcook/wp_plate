@@ -19,6 +19,11 @@ header.banner-header {
 		@media (min-width: 992px) {
 			font-size: 34px;
 		}
+		span {
+			@extend h1.banner-title;
+			font-family: $os-reg;
+			font-style: italic;
+		}
 	}
 	.entry-meta {
 		margin-top: 7px;

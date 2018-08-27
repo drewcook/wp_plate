@@ -76,9 +76,26 @@
 
 	<?php if (is_front_page()) : ?>
 		<div id="front-page">
-	<?php elseif (is_page() || is_single()) : ?>
+	<?php elseif (is_404()) : ?>
 		<div id="content">
-	<?php else: ?>
+	<?php elseif (is_archive()) : ?>
+		<header class="banner-header">
+			<?php
+				the_archive_title( '<h1 class="banner-title">', '</h1>' );
+			?>
+		</header><!-- .page-header -->
+	<?php elseif (is_search()) : ?>
+		<header class="banner-header">
+			<h1 class="banner-title"><?php printf( esc_html__( 'Search Results for: %s', 'aws' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+		</header><!-- .page-header -->
+	<?php else : ?>
 		<div id="content">
-			<div class="container">
+			<header class="banner-header">
+				<?php (is_home() ? single_post_title( '<h1 class="banner-title">', '</h1>' ) : the_title( '<h1 class="banner-title">', '</h1>' )); ?>
+				<?php if ( 'post' === get_post_type() && is_single() ) : ?>
+					<div class="entry-meta">
+						<?php aws_posted_on(); ?>
+					</div><!-- .entry-meta -->
+				<?php endif; ?>
+			</header><!-- .entry-header -->
 	<?php endif; ?>

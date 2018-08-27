@@ -4,21 +4,14 @@
 
 body.blog, body.search, body.archive, body.category {
 	#main {
-		header.blog-header, header.search-header, header.archive-header, header.none-header {
-			margin: 0;
-			border-bottom: 1px solid $primary_color;
-			h1 {
-				margin: 0 0 5px;
-				span {
-					@extend h1;
-					font-size: 36px;
-					font-style: italic;
-				}
+		.no-results {
+			.page-title {
+				margin: 0;
 			}
-			.archive-description {
+			.page-content {
+				margin: 0;
 				p {
-					margin: 0;
-					font-style: italic;
+					margin: 15px 0 25px;
 				}
 			}
 		}
