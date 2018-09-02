@@ -15,6 +15,9 @@ get_header(); ?>
 			<main id="main" role="main">
 				<?php if ( have_posts() ) :
 					while ( have_posts() ) : the_post();
+						echo "<div class=\"breadcrumbs\">";
+						get_breadcrumbs($post);
+						echo "</div>";
 						get_template_part( 'template-parts/content', get_post_format() );
 					endwhile;
 					the_posts_navigation();
