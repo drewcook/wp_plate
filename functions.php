@@ -41,6 +41,33 @@ if ( ! function_exists( 'aws_setup' ) ) :
 endif;
 add_action( 'after_setup_theme', 'aws_setup' );
 
+// Breadcrumbs
+function get_breadcrumbs($post) {
+	echo '<a href="'.home_url().'" rel="nofollow">Home</a>';
+	if (is_category() || is_single()) {
+		echo "&nbsp;&nbsp;&#187;&nbsp;&nbsp;";
+		the_category(' &bull; ');
+		if (is_single()) {
+			echo " &nbsp;&nbsp;&#187;&nbsp;&nbsp; ";
+			the_title();
+		}
+	} elseif (is_page()) {
+		if ($post->post_parent) {
+			$parent_title = get_the_title($post->post_parent);
+			$parent_url = get_permalink($post->post_parent);
+			echo "&nbsp;&nbsp;&#187;&nbsp;&nbsp;";
+			echo '<a href="'.$parent_url.'" rel="nofollow">'.$parent_title.'</a>';
+		}
+		echo "&nbsp;&nbsp;&#187;&nbsp;&nbsp;";
+		echo the_title();
+	} elseif (is_search()) {
+		echo "&nbsp;&nbsp;&#187;&nbsp;&nbsp;Search Results for... ";
+		echo '"<em>';
+		echo the_search_query();
+		echo '</em>"';
+	}
+}
+
 
 /*
    Remove Wordpress Bloat
