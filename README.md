@@ -14,3 +14,5 @@ Gulp is installed and set up to concatenate and minify javascript, as well as co
 1. Run `gulp`
 
 If you have a different proxy set up on your local server, make sure to correct that in gulpfile.js so BrowserSync can connect properly.  It is set under the `watch` task.  The default proxy for this task is `localhost`.
+
+Enjoy.
